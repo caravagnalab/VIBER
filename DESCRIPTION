@@ -1,0 +1,18 @@
+Package: mvbmm
+Type: Package
+Title: Multivariate Binomial mixtures modelling and fit
+Version: 0.1.0
+Author: Giulio Caravagna
+Maintainer: Giulio Caravagna <gcaravagn@gmail.com>
+Authors@R: person("Giulio", "Caravagna", role = c("aut", "cre"), email = "gcaravagn@gmail.com")
+Description: Implementation of variational and Monte Carlo methods to fit 
+  semi-parametric models of Binomial mixtures, based either on Dirichlet Mixtures or
+  Dirichlet Processes.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports: pio, easypar, tidyverse
+RoxygenNote: 6.1.0
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
