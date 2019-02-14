@@ -128,8 +128,14 @@ plot_latent_variables = function(x, cex = 1)
 {
   stopifnot(inherits(x, "vb_bmm"))
 
-  lv = reshape2::melt(x$r_nk)
+  # Latent vars
+  lv = data.frame(x$r_nk)
+  lv$c = x$labels$cluster.Binomial
+  lv = lv[order(lv$c), , drop = FALSE]
+  lv$c = NULL
 
+  # Reshape and cut
+  lv = reshape2::melt(lv)
   lv$value = cut(lv$value,
                  breaks = c(-Inf, seq(0, 1, 0.05), Inf))
 
