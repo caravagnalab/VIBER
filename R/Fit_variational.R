@@ -315,7 +315,7 @@ vb_bmm_MV <-
         ),
         class = "vb_bmm",
         call = match.call(),
-        modelname = "mvbmm - Variational fit for Binomial mixtures"
+        modelname = "VIBER - Variational inference for Binomial mixtures"
       )
 
     return(obj)

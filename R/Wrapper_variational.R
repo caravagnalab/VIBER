@@ -69,7 +69,7 @@ variational_fit = function(x,
 {
   best = NULL
 
-  pioHdr('mvbmm - variational fit')
+  pioHdr('VIBER - variational fit')
 
   # Stop if errors on the input
   var_check_input(x,

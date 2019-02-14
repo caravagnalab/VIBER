@@ -31,9 +31,12 @@ print.vb_bmm <- function(x, ...)
 
   pioHdr(attributes(x)$modelname)
 
-  pio::pioStr("\n Points", paste0("N = ",  x$N))
-  pio::pioStr("\nSamples", paste0("W = ",  nrow(x$theta_k)))
-  pio::pioStr("\n\n Status",  paste0(x$status, ' (', length(x$ELBO), ' steps; eps. ', x$epsilon_conv, ') with ', x$fit_type))
+  pio::pioStr("\n    Points", paste0("N = ",  x$N))
+  pio::pioStr("\nDimensions", paste0("W = ",  nrow(x$theta_k)))
+  pio::pioStr("\n       Fit",
+              paste0(x$status,
+                     ' (', length(x$ELBO), ' steps; eps. ', x$epsilon_conv, ') with ',
+                     x$fit_type))
 
   sor_p = sort(x$pi_k, decreasing = TRUE)
   sor_p = names(sor_p)
@@ -42,7 +45,7 @@ print.vb_bmm <- function(x, ...)
 
   pio::pioDisp(round(x$theta_k[, sor_p], 2))
 
-  pio::pioStr("\nProportions (sorted)", '', suffix = '\n')
+  pio::pioStr("\nProportions (ordered)", '', suffix = '\n')
 
   pio::pioDisp(x$pi_k[sor_p])
 }

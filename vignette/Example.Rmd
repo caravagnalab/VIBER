@@ -1,5 +1,5 @@
 ---
-title: "Vignette for mvbmm"
+title: "VIBER Vignette"
 author: "Giulio Caravagna"
 date: "14 February 2019"
 institute: "Institute for Cancer Research"
@@ -16,10 +16,10 @@ Install the package from github, use `devtools` to install directly from GitHub 
 - Pretty I/O: [pio](https://github.com/caravagn/pio)
 - Easy parallel [easypar](https://github.com/caravagn/easypar)
 
-until we develop an automatic installer for [mvbmm](https://github.com/caravagn/mvbmm). Once installed just load the package
+until we develop an automatic installer for [VIBER](https://github.com/caravagn/VIBER). Once installed just load the package
 
 ```{r, message=FALSE, warning=FALSE}
-library(mvbmm)
+library(VIBER)
 library(tidyverse)
 ```
 

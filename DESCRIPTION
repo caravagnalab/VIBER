@@ -1,13 +1,12 @@
-Package: mvbmm
+Package: VIBER
 Type: Package
-Title: Multivariate Binomial mixtures modelling and fit
+Title: VIBER - Variational Inference for Binomial mixtures
 Version: 0.1.0
 Author: Giulio Caravagna
 Maintainer: Giulio Caravagna <gcaravagn@gmail.com>
 Authors@R: person("Giulio", "Caravagna", role = c("aut", "cre"), email = "gcaravagn@gmail.com")
-Description: Implementation of variational and Monte Carlo methods to fit 
-  semi-parametric models of Binomial mixtures, based either on Dirichlet Mixtures or
-  Dirichlet Processes.
+Description: Implementation of variational non-parametric Dirichlet models of multivariate
+  Binomial mixtures.
 License: GPL
 Encoding: UTF-8
 LazyData: true
