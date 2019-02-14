@@ -113,4 +113,8 @@ You can plot the mixing proportions of the mixture
 plot_mixing_proportions(fit)
 ```
 
+And, finally, you can plot the latent variables of the mixture 
+```{r, fig.height=4, fig.width=4}
+plot_latent_variables(fit)
+```
 

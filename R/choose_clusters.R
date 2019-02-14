@@ -16,6 +16,8 @@
 #' @return An object of class 'vb_bmm'.
 #' @export
 #'
+#' @import tidyverse
+#'
 #' @examples
 #' data(fit_mvbmm_example)
 #' choose_cluster(fit_mvbmm_example)

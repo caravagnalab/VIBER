@@ -14,7 +14,7 @@ plot_mixing_proportions(x, cex = 1, colors = NA)
 \item{colors}{Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.}
 }
 \value{
-A plot of the of the mixing proportions of the mixture.
+A plot of the mixing proportions of the mixture.
 }
 \description{
 Plot the mixing proportions of the mixture.

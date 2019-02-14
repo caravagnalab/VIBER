@@ -84,7 +84,7 @@ plot_peaks = function(x, cex = 1, colors = NA)
 #' @param cex Cex of the plot.
 #' @param colors Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.
 #'
-#' @return A plot of the of the mixing proportions of the mixture.
+#' @return A plot of the mixing proportions of the mixture.
 #' @export
 #'
 #' @examples
@@ -111,6 +111,45 @@ plot_mixing_proportions = function(x, cex = 1, colors = NA)
     )
 
   return(add_fill_pl(x, p, colors))
+}
+
+#' Plot the latent variables of the mixture.
+#'
+#' @param x An object of class 'vb_bmm'.
+#' @param cex Cex of the plot.
+#'
+#' @return A plot of the latent variables of the mixture.
+#' @export
+#'
+#' @examples
+#' data(fit_mvbmm_example)
+#' plot_latent_variables(fit_mvbmm_example)
+plot_latent_variables = function(x, cex = 1)
+{
+  stopifnot(inherits(x, "vb_bmm"))
+
+  lv = reshape2::melt(x$r_nk)
+
+  lv$value = cut(lv$value,
+                 breaks = c(-Inf, seq(0, 1, 0.05), Inf))
+
+  colnames(lv) = c('Point', "Cluster", "Value")
+
+  ggplot(lv, aes(x = Cluster, y = Point, fill = Value)) +
+    geom_raster() +
+    scale_fill_brewer(palette = 'YlGnBu') +
+    theme_light(base_size = 8 * cex) +
+    theme(
+      legend.position = "bottom",
+      legend.key.size = unit(.3 * cex, "cm"),
+      legend.text = element_text(size = 8 * cex),
+      # axis.title.y = element_blank(),
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank()
+    ) +
+    labs(
+      title = bquote(bold("Latent variables"))
+    )
 }
 
 
