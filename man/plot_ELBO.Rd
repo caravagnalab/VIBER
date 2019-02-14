@@ -18,6 +18,6 @@ A plot of the ELBO.
 Plot the ELBO
 }
 \examples{
-data(fit_mvbmm_example_4D)
-plot_ELBO(fit_mvbmm_example_4D)
+data(fit_mvbmm_example)
+plot_ELBO(fit_mvbmm_example)
 }

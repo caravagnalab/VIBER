@@ -32,10 +32,6 @@
 #' @param epsilon_conv Epsilon to measure convergence (ELBO absolute difference).
 #' @param samples Number of fits computed by the algorithm. Only the best fit is
 #' returned. This value must be greater or equal than 1.
-#' @param pi_cutoff The method will attempt to fit at most \code{K} clusters, and
-#' will drop all clusters that contain less than \code{pi_cutoff} points (updating
-#' the latent variables and clustering assignments). Default is \code{pi_cutoff = 0.02}
-#' which is 2\% of the input points.
 #' @param q_init Initialization of the q-distribution to compute the approximation
 #' of the posterior distributions. This can be set in three different waysL
 #' equal to the prior (\code{q_init = 'prior'}), via kmeans clustering
@@ -56,8 +52,8 @@
 #' @import crayon
 #'
 #' @examples
-#' data(mvbmm_example_4D)
-#' f = variational_fit(mvbmm_example_4D$successes, mvbmm_example_4D$trials)
+#' data(mvbmm_example)
+#' f = variational_fit(mvbmm_example$successes, mvbmm_example$trials)
 #' print(f)
 variational_fit = function(x,
                            y,
@@ -68,7 +64,6 @@ variational_fit = function(x,
                            max_iter = 5000,
                            epsilon_conv = 1e-10,
                            samples = 10,
-                           pi_cutoff = 1e-2,
                            q_init = 'prior',
                            trace = FALSE)
 {
@@ -86,7 +81,6 @@ variational_fit = function(x,
                   max_iter,
                   epsilon_conv,
                   samples,
-                  pi_cutoff,
                   q_init)
 
   TIME = as.POSIXct(Sys.time(), format = "%H:%M:%S")

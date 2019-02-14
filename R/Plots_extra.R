@@ -7,8 +7,8 @@
 #' @export
 #'
 #' @examples
-#' data(fit_mvbmm_example_4D)
-#' plot_ELBO(fit_mvbmm_example_4D)
+#' data(fit_mvbmm_example)
+#' plot_ELBO(fit_mvbmm_example)
 plot_ELBO = function(x, cex = 1)
 {
   stopifnot(inherits(x, "vb_bmm"))
@@ -40,8 +40,8 @@ plot_ELBO = function(x, cex = 1)
 #' @export
 #'
 #' @examples
-#' data(fit_mvbmm_example_4D)
-#' plot_peaks(fit_mvbmm_example_4D)
+#' data(fit_mvbmm_example)
+#' plot_peaks(fit_mvbmm_example)
 plot_peaks = function(x, cex = 1, colors = NA)
 {
   stopifnot(inherits(x, "vb_bmm"))
@@ -88,8 +88,8 @@ plot_peaks = function(x, cex = 1, colors = NA)
 #' @export
 #'
 #' @examples
-#' data(fit_mvbmm_example_4D)
-#' plot_mixing_proportions(fit_mvbmm_example_4D)
+#' data(fit_mvbmm_example)
+#' plot_mixing_proportions(fit_mvbmm_example)
 plot_mixing_proportions = function(x, cex = 1, colors = NA)
 {
   stopifnot(inherits(x, "vb_bmm"))

@@ -20,6 +20,6 @@ This functions runs for every pair of dimensions
 in the data the function \code{plot_2D}.
 }
 \examples{
-data(fit_mvbmm_example_4D)
-plot(fit_mvbmm_example_4D)
+data(fit_mvbmm_example)
+plot(fit_mvbmm_example)
 }

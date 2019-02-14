@@ -17,7 +17,8 @@
 #' @export
 #'
 #' @examples
-#' TODO
+#' data(fit_mvbmm_example)
+#' choose_cluster(fit_mvbmm_example)
 choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_cutoff = 0.02)
 {
   pio::pioTit(paste0("Selecting Binomial clusters (F1,2-heuristic)."))
@@ -60,7 +61,7 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   K.rj = nrow(rejected.clones)
 
   # Mapping old labels to new ones
-  tab_clusters$new.labels = paste0('C', 1:nrow(table_pi))
+  tab_clusters$new.labels = paste0('C', 1:nrow(tab_clusters))
 
   print(tab_clusters)
 

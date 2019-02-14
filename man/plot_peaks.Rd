@@ -20,6 +20,6 @@ A plot of the Binomial peaks per dimension.
 Plot the Binomial peaks of the mixture.
 }
 \examples{
-data(fit_mvbmm_example_4D)
-plot_peaks(fit_mvbmm_example_4D)
+data(fit_mvbmm_example)
+plot_peaks(fit_mvbmm_example)
 }

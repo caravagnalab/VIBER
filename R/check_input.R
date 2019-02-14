@@ -8,7 +8,6 @@ var_check_input = function(x,
                            max_iter,
                            epsilon_conv,
                            samples,
-                           pi_cutoff,
                            q_init)
 {
   # x and y
@@ -41,8 +40,6 @@ var_check_input = function(x,
   stopifnot(max_iter > 0)
   stopifnot(epsilon_conv > 0)
   stopifnot(!is.na(epsilon_conv))
-
-  stopifnot(pi_cutoff >= 0)
 
   stopifnot(
     q_init %in%

@@ -20,6 +20,6 @@ A plot of the of the mixing proportions of the mixture.
 Plot the mixing proportions of the mixture.
 }
 \examples{
-data(fit_mvbmm_example_4D)
-plot_mixing_proportions(fit_mvbmm_example_4D)
+data(fit_mvbmm_example)
+plot_mixing_proportions(fit_mvbmm_example)
 }

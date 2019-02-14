@@ -9,8 +9,8 @@
 #' @export
 #'
 #' @examples
-#' data(fit_mvbmm_example_4D)
-#' print(fit_mvbmm_example_4D)
+#' data(fit_mvbmm_example)
+#' print(fit_mvbmm_example)
 summary.vb_bmm <- function(x, ...) {
   print.vb_bmm(x, ...)
 }
@@ -23,8 +23,8 @@ summary.vb_bmm <- function(x, ...) {
 #' @export
 #'
 #' @examples
-#' data(fit_mvbmm_example_4D)
-#' print(fit_mvbmm_example_4D)
+#' data(fit_mvbmm_example)
+#' print(fit_mvbmm_example)
 print.vb_bmm <- function(x, ...)
 {
   stopifnot(inherits(x, "vb_bmm"))

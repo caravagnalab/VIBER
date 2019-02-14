@@ -11,8 +11,8 @@
 #' @export
 #'
 #' @examples
-#' data(fit_mvbmm_example_4D)
-#' plot(fit_mvbmm_example_4D)
+#' data(fit_mvbmm_example)
+#' plot(fit_mvbmm_example)
 plot.vb_bmm <- function(x, ...)
 {
   stopifnot(inherits(x, "vb_bmm"))

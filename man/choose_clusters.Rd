@@ -29,5 +29,6 @@ be renamed by size (C1 will be larger etc.), and the latent variables and
 hard clustering assignments will be updated accordingly.
 }
 \examples{
-TODO
+data(fit_mvbmm_example)
+choose_cluster(fit_mvbmm_example)
 }

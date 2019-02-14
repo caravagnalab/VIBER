@@ -6,7 +6,7 @@
 \usage{
 variational_fit(x, y, K = 10, alpha_0 = 1e-06, a_0 = 1, b_0 = 1,
   max_iter = 5000, epsilon_conv = 1e-10, samples = 10,
-  pi_cutoff = 0.01, q_init = "prior", trace = FALSE)
+  q_init = "prior", trace = FALSE)
 }
 \arguments{
 \item{x}{A matrix where each column is a dimension of the multivariate Binomial,
@@ -40,11 +40,6 @@ this number of iterations is performed. Default \code{max_iter = 5000}}
 \item{samples}{Number of fits computed by the algorithm. Only the best fit is
 returned. This value must be greater or equal than 1.}
 
-\item{pi_cutoff}{The method will attempt to fit at most \code{K} clusters, and
-will drop all clusters that contain less than \code{pi_cutoff} points (updating
-the latent variables and clustering assignments). Default is \code{pi_cutoff = 0.02}
-which is 2\% of the input points.}
-
 \item{q_init}{Initialization of the q-distribution to compute the approximation
 of the posterior distributions. This can be set in three different waysL
 equal to the prior (\code{q_init = 'prior'}), via kmeans clustering
@@ -69,7 +64,7 @@ prior for the concentration of the mixture (\code{alpha_0}), as well as
 the hyperparmeters of the Beta priors for each mixture component.
 }
 \examples{
-data(mvbmm_example_4D)
-f = variational_fit(mvbmm_example_4D$successes, mvbmm_example_4D$trials)
+data(mvbmm_example)
+f = variational_fit(mvbmm_example$successes, mvbmm_example$trials)
 print(f)
 }
