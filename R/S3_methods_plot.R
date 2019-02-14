@@ -1,13 +1,18 @@
-#' Plot the clusters
+#' Plot the clustering assignments.
+#'
+#' @description This functions runs for every pair of dimensions
+#' in the data the function \code{plot_2D}.
 #'
 #' @param x An object of class vb_bmm.
 #' @param ...
 #'
-#' @return Nothing, just print to screen.
+#' @return A list of plots, that can be assembled in a unique figure
+#' with other packages like \code{ggpubr}.
 #' @export
 #'
 #' @examples
-#' TODO
+#' data(fit_mvbmm_example_4D)
+#' plot(fit_mvbmm_example_4D)
 plot.vb_bmm <- function(x, ...)
 {
   stopifnot(inherits(x, "vb_bmm"))

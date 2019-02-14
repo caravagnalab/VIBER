@@ -56,7 +56,9 @@
 #' @import crayon
 #'
 #' @examples
-#'
+#' data(mvbmm_example_4D)
+#' f = variational_fit(mvbmm_example_4D$successes, mvbmm_example_4D$trials)
+#' print(f)
 variational_fit = function(x,
                            y,
                            K = 10,

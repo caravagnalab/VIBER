@@ -1,17 +1,34 @@
-#' Colorectal Cancer Data by Cross et al.
+#' Example data (4-dimensional Binomial mixture)
 #'
-#' Driver mutations detected by Cross et al. in a cohort of colorecta adenomas and carcinomas.
+#' @description Data from a 4-dimensional Binomial mixture (with unknown ground truth)
 #'
 #' @docType data
 #'
-#' @usage data(example_2D_binom)
+#' @usage data(mvbmm_example_4D)
 #'
-#' @format Data from a 2D Binomial mixture
+#' @format Data from a multivariate Binomial mixture with 4 dimensions
 #'
 #' @keywords datasets
-#'#'
-#' @examples
-#' data(example_2D_binom)
-#' head(example_2D_binom)
 #'
-"example_2D_binom"
+#' @examples
+#' data(mvbmm_example_4D)
+#' head(mvbmm_example_4D)
+"mvbmm_example_4D"
+
+
+#' Fit of the attached 4-dimensional Binomial mixture
+#'
+#' @description Fir for a 4-dimensional Binomial mixture
+#'
+#' @docType data
+#'
+#' @usage data(fit_mvbmm_example_4D)
+#'
+#' @format Fit of a multivariate Binomial mixture with 4 dimensions
+#'
+#' @keywords datasets
+#'
+#' @examples
+#' data(fit_mvbmm_example_4D)
+#' print(fit_mvbmm_example_4D)
+"fit_mvbmm_example_4D"

@@ -69,5 +69,7 @@ prior for the concentration of the mixture (\code{alpha_0}), as well as
 the hyperparmeters of the Beta priors for each mixture component.
 }
 \examples{
-
+data(mvbmm_example_4D)
+f = variational_fit(mvbmm_example_4D$successes, mvbmm_example_4D$trials)
+print(f)
 }

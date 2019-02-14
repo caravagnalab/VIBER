@@ -2,7 +2,7 @@
 % Please edit documentation in R/S3_methods_plot.R
 \name{plot.vb_bmm}
 \alias{plot.vb_bmm}
-\title{Plot the clusters}
+\title{Plot the clustering assignments.}
 \usage{
 \method{plot}{vb_bmm}(x, ...)
 }
@@ -12,11 +12,14 @@
 \item{...}{}
 }
 \value{
-Nothing, just print to screen.
+A list of plots, that can be assembled in a unique figure
+with other packages like \code{ggpubr}.
 }
 \description{
-Plot the clusters
+This functions runs for every pair of dimensions
+in the data the function \code{plot_2D}.
 }
 \examples{
-TODO
+data(fit_mvbmm_example_4D)
+plot(fit_mvbmm_example_4D)
 }

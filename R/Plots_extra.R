@@ -7,7 +7,8 @@
 #' @export
 #'
 #' @examples
-#' TODO
+#' data(fit_mvbmm_example_4D)
+#' plot_ELBO(fit_mvbmm_example_4D)
 plot_ELBO = function(x, cex = 1)
 {
   stopifnot(inherits(x, "vb_bmm"))
@@ -39,7 +40,8 @@ plot_ELBO = function(x, cex = 1)
 #' @export
 #'
 #' @examples
-#' TODO
+#' data(fit_mvbmm_example_4D)
+#' plot_peaks(fit_mvbmm_example_4D)
 plot_peaks = function(x, cex = 1, colors = NA)
 {
   stopifnot(inherits(x, "vb_bmm"))
@@ -86,7 +88,8 @@ plot_peaks = function(x, cex = 1, colors = NA)
 #' @export
 #'
 #' @examples
-#' TODO
+#' data(fit_mvbmm_example_4D)
+#' plot_mixing_proportions(fit_mvbmm_example_4D)
 plot_mixing_proportions = function(x, cex = 1, colors = NA)
 {
   stopifnot(inherits(x, "vb_bmm"))
@@ -110,64 +113,4 @@ plot_mixing_proportions = function(x, cex = 1, colors = NA)
   return(add_fill_pl(x, p, colors))
 }
 
-
-#' #' Plot the mixing proportions of the mixture, per dimension.
-#' #'
-#' #' @param x An object of class 'vb_bmm'.
-#' #' @param cex Cex of the plot.
-#' #' @param colors Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.
-#' #'
-#' #' @return A plot of the of the mixing proportions of the mixture, per dimension.
-#' #' @export
-#' #'
-#' #' @examples
-#' #' TODO
-#' plot_mixing_proportions_per_dimension = function(x, cex = 1, colors = NA)
-#' {
-#'   stopifnot(inherits(x, "vb_bmm"))
-#'
-#'   # Per sample
-#'   samples = colnames(x$x %>% select(-cluster.Binomial))
-#'   prop.samples = lapply(
-#'     samples,
-#'     function(s)
-#'     {
-#'       p = bind_cols(get_2D_points(x, s, s)[, 1],
-#'                     cl = x$labels) %>%
-#'         filter(!!s > 0)
-#'
-#'       n = nrow(p)
-#'       table(p %>% pull(cluster.Binomial))/n
-#'     })
-#'
-#'   prop.samples = Reduce(bind_rows, prop.samples)
-#'   prop.samples$sample = samples
-#'
-#'   prop.samples = reshape2::melt(prop.samples)
-#'   colnames(prop.samples) = c('sample', 'cluster', 'proportion')
-#'
-#'   p = ggplot(prop.samples, aes(x = cluster, y = proportion, fill = cluster)) +
-#'     geom_bar(stat = 'identity') +
-#'     theme_light(base_size = 8 * cex) +
-#'     theme(
-#'       legend.position = "bottom",
-#'       legend.key.size = unit(.3 * cex, "cm"),
-#'       legend.text = element_text(size = 8 * cex)
-#'     ) +
-#'     facet_wrap(~sample, nrow = 1) +
-#'     ylim(0, 1) +
-#'     labs(
-#'       title = bquote(bold("Mixing proportions per dimension"))
-#'     )
-#'
-#'   if(!is.na(colors)){
-#'     wh_col = unique(x$x$cluster.Binomial)
-#'     stopifnot(all(wh_col %in% names(colors)))
-#'
-#'     p = p + scale_fill_manual(values = colors)
-#'   }
-#'
-#'   p
-#' }
-#'
 

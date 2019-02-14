@@ -13,9 +13,9 @@ vb_bmm_MV <-
            q_init
   )
   {
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-    #' log sum exp trick for having numeric stability   #
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # log sum exp trick for having numeric stability   #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
     # Use the
     log_sum_exp <- function(x) {
@@ -33,9 +33,9 @@ vb_bmm_MV <-
     Tn = as.matrix(x_DP)
     TminusSn = Tn - Sn
 
-    #' =-=-=-=-=-=-=-=-=-=-= #
-    #' Auxiliary variables   #
-    #' =-=-=-=-=-=-=-=-=-=-= #
+    # =-=-=-=-=-=-=-=-=-=-= #
+    # Auxiliary variables   #
+    # =-=-=-=-=-=-=-=-=-=-= #
 
     N = nrow(Sn)             # Number of observations
     W = ncol(Sn)             # Number of dimensions
@@ -55,9 +55,9 @@ vb_bmm_MV <-
     log_pi = rep(0, K)
     names(log_pi) = cluster_names
 
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-    #' Bayesian priors from the hyperparameters   #
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # Bayesian priors from the hyperparameters   #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
     # Dirichlet [alpha_0 ... alpha_0]
     alpha_0 = rep(alpha_0, K)
@@ -75,9 +75,9 @@ vb_bmm_MV <-
     rownames(a_0) = rownames(b_0) = dimensions_names
     colnames(a_0) = colnames(b_0) = cluster_names
 
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-    #' Posterior approximations, different ways to initialize the q   #
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # Posterior approximations, different ways to initialize the q   #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
     # Init: variational distribution q (via `q_init`)
     # - random : q_init = to the prior's value
     # - kmeans : via kmeans clustering
@@ -98,9 +98,9 @@ vb_bmm_MV <-
       b = kmeans_params$b
     }
 
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-    #' Normalization constants for the priors, required for the ELBO  #
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # Normalization constants for the priors, required for the ELBO  #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
     # ln Cn -- log of Binomial data
     # ln C(alpha_0) -- log of the Dirichlet
     # ln Beta(a0, b0) -- log of K Beta
@@ -108,9 +108,9 @@ vb_bmm_MV <-
     log_C_alpha_0 = lgamma(sum(alpha_0)) - sum(lgamma(alpha_0))
     log_beta_ab_0 = lbeta(a, b)
 
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-    #' Other extra variables that we report in the fit  #
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # Other extra variables that we report in the fit  #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
     # Computation status to be updated in the end
     status = ''
     fit_type = 'Variational'
@@ -118,15 +118,15 @@ vb_bmm_MV <-
     # The trace of the fit
     fit_trace = NULL
 
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-    #' Minimization of the KL divergence between the posterior and its approximution  #
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # Minimization of the KL divergence between the posterior and its approximution  #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
     i = 1
     repeat {
 
-      #' =-=-=-=-=-=-=-=-=- #
-      #' Variational E-Step #
-      #' =-=-=-=-=-=-=-=-=- #
+      # =-=-=-=-=-=-=-=-=- #
+      # Variational E-Step #
+      # =-=-=-=-=-=-=-=-=- #
 
       # Digamma values for the current Beta distributions
       # that we need in the E-Step
@@ -158,9 +158,9 @@ vb_bmm_MV <-
                                 step = i))
       }
 
-      #' =-=-=-=-=-=-=-=-=- #
-      #' Variational M-Step #
-      #' =-=-=-=-=-=-=-=-=- #
+      # =-=-=-=-=-=-=-=-=- #
+      # Variational M-Step #
+      # =-=-=-=-=-=-=-=-=- #
 
       # Auxiliary quantities - s_star and t_star as in the notes
       N_k <- colSums(r_nk) + 1e-10
@@ -192,10 +192,10 @@ vb_bmm_MV <-
         (alpha_0 + N_k) / (K * alpha_0 + N)  # mixing proportions
       theta_k = a / (a + b)                  # Binomial parameter (mean of the posterior)
 
-      #' =-=-=-=-=-=-=-=-=- #
-      #' Variational ELBO   #
-      #' =-=-=-=-=-=-=-=-=- #
-      #'
+      # =-=-=-=-=-=-=-=-=- #
+      # Variational ELBO   #
+      # =-=-=-=-=-=-=-=-=- #
+      #
       # Updated values for the new posterior estimates
       dga = digamma(a)        # Psi(a)
       dgb = digamma(b)        # Psi(b)
@@ -236,9 +236,9 @@ vb_bmm_MV <-
 
       L = c(L, ELBO)
 
-      #' =-=-=-=-=-=-=-=-=- #
-      #' Checks convergency #
-      #' =-=-=-=-=-=-=-=-=- #
+      # =-=-=-=-=-=-=-=-=- #
+      # Checks convergency #
+      # =-=-=-=-=-=-=-=-=- #
       if(i > 1)
       {
         ELBO_diff = abs(L[i] - L[i - 1])
@@ -267,9 +267,9 @@ vb_bmm_MV <-
 
     flush.console()
 
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=- #
-    #' Hard clustering assignment #
-    #' =-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=- #
+    # Hard clustering assignment #
+    # =-=-=-=-=-=-=-=-=-=-=-=-=- #
 
     labels = tibble(
       cluster.Binomial = latent_vars_hard_assignments(lv = list(`z_nk` = r_nk, `pi` = pi_k)))

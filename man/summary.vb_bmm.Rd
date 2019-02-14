@@ -18,5 +18,6 @@ Nothing, just print to screen.
 Print to screen the object
 }
 \examples{
-TODO
+data(fit_mvbmm_example_4D)
+print(fit_mvbmm_example_4D)
 }
