@@ -110,7 +110,7 @@ plot_mixing_proportions = function(x, cex = 1, colors = NA)
       title = bquote(bold("Mixing proportions"))
     )
 
-  return(add_fill_pl(x, p, colors))
+  return(p)
 }
 
 #' Plot the latent variables of the mixture.
@@ -136,7 +136,7 @@ plot_latent_variables = function(x, cex = 1)
 
   colnames(lv) = c('Point', "Cluster", "Value")
 
-  ggplot(lv, aes(x = Cluster, y = Point, fill = Value)) +
+  pl = ggplot(lv, aes(x = Cluster, y = Point, fill = Value)) +
     geom_raster() +
     scale_fill_brewer(palette = 'YlGnBu') +
     theme_light(base_size = 8 * cex) +
@@ -151,6 +151,36 @@ plot_latent_variables = function(x, cex = 1)
     labs(
       title = bquote(bold("Latent variables"))
     )
+
+  # Data
+  # cn = colnames(x$x)[-1]1
+  #
+  # vals = lapply(cn, function(n) x$x[, n]/x$y[, n])
+  # vals = Reduce(cbind, vals)
+  #
+  # colnames(vals) = cn
+  # vals$y = paste0('x', 1:nrow(vals))
+  #
+  # vals = reshape2::melt(vals[order(x$labels$cluster.Binomial), ], id = 'y')
+  # colnames(vals) = c( "Y", 'Dimension', "Success probability")
+  #
+  # dt = ggplot(vals, aes(x = Dimension, y = Y, fill = `Success probability`)) +
+  #   geom_raster() +
+  #   scale_fill_gradient(low = 'orange', high = 'red') +
+  #   theme_light(base_size = 8 * cex) +
+  #   theme(
+  #     legend.position = "bottom",
+  #     legend.key.size = unit(.3 * cex, "cm"),
+  #     legend.text = element_text(size = 8 * cex),
+  #     # axis.title.y = element_blank(),
+  #     axis.text.y = element_blank(),
+  #     axis.ticks.y = element_blank()
+  #   ) +
+  #   labs(
+  #     title = bquote(bold("Latent variables"))
+  #   )
+
+  pl
 }
 
 
