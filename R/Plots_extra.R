@@ -128,17 +128,28 @@ plot_latent_variables = function(x, cex = 1)
 {
   stopifnot(inherits(x, "vb_bmm"))
 
-  # Reshape and cut
-  lv = reshape2::melt(x$r_nk[order(x$labels$cluster.Binomial), ])
+  # Valuse for the ordering
+  lv = x$r_nk %>%
+    as_tibble()
 
-  lv$value = cut(lv$value,
-                 breaks = c(-Inf, seq(0, 1, 0.05), Inf))
+  lv$uncertainty = 1 - apply(lv, 1, max)
+  lv$Cluss_ass = x$labels$cluster.Binomial
+  lv$mutation = rownames(x$r_nk)
 
+  lv = lv %>% arrange(Cluss_ass, uncertainty)
+
+  mutation_ordering = lv$mutation
+
+  # Reshape
+  lv = reshape2::melt(x$r_nk) %>% as_tibble()
   colnames(lv) = c('Point', "Cluster", "Value")
 
-  pl = ggplot(lv, aes(x = Cluster, y = Point, fill = Value)) +
+  lv$Point = factor(lv$Point, levels = mutation_ordering)
+
+
+  ggplot(lv, aes(x = Cluster, y = Point, fill = Value)) +
     geom_raster() +
-    scale_fill_brewer(palette = 'YlGnBu') +
+    scale_fill_distiller(palette = 'YlGnBu', direction = 1, limits = c(0, 1)) +
     theme_light(base_size = 8 * cex) +
     theme(
       legend.position = "bottom",
@@ -150,6 +161,9 @@ plot_latent_variables = function(x, cex = 1)
     ) +
     labs(
       title = bquote(bold("Latent variables"))
+    ) +
+    guides(
+      fill = guide_colorbar("", barwidth = 8)
     )
 
   # Data
@@ -180,7 +194,7 @@ plot_latent_variables = function(x, cex = 1)
   #     title = bquote(bold("Latent variables"))
   #   )
 
-  pl
+  # pl
 }
 
 

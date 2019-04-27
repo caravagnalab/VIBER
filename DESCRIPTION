@@ -11,7 +11,7 @@ License: GPL
 Encoding: UTF-8
 LazyData: true
 Imports: pio, easypar, tidyverse
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr

@@ -107,7 +107,7 @@ variational_fit = function(x,
   #
   fits = easypar::run(
     FUN = function(i) {
-      mvbmm:::vb_bmm_MV(
+      vb_bmm_MV(
         x_NV = x,
         x_DP = y,
         K = K,
@@ -121,7 +121,7 @@ variational_fit = function(x,
       )
     },
     PARAMS = lapply(1:samples, list),
-    packages = c("crayon", "pio", "mvbmm", "tidyverse"),
+    packages = c("crayon", "pio", "VIBER", "tidyverse"),
     export = ls(globalenv(), all.names = TRUE),
     cores.ratio = .8,
     parallel = TRUE,

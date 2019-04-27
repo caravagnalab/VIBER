@@ -4,14 +4,12 @@
 \alias{plot_latent_variables}
 \title{Plot the latent variables of the mixture.}
 \usage{
-plot_latent_variables(x, cex = 1, add.VAF = TRUE)
+plot_latent_variables(x, cex = 1)
 }
 \arguments{
 \item{x}{An object of class 'vb_bmm'.}
 
 \item{cex}{Cex of the plot.}
-
-\item{add.VAF}{Add also the VAF inside \code{x} to the plot.}
 }
 \value{
 A plot of the latent variables of the mixture.
