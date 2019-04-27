@@ -68,7 +68,7 @@ fit = variational_fit(
 
 Because the model is semi-parametric, it will attempt to use at most `K` Binomial clusters. However, most of those clusters might be not interesting and you might want to filter them.
 
-`mvbmm` implements 2 possible filters which are available in function `choose_clusters`.
+VIBER implements 2 possible filters which are available in function `choose_clusters`.
 
 
 - Filter 1 [F1] uses the cluster size (mixing proportion), which one can be required to be above a certain cutoff;

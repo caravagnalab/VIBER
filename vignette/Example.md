@@ -135,11 +135,11 @@ fit = variational_fit(
     ##  
     ##     Points N = 231  
     ## Dimensions W = 2  
-    ##        Fit CONVERGED (18 steps; eps. 1e-10) with Variational  
+    ##        Fit CONVERGED (21 steps; eps. 1e-10) with Variational  
     ## 
     ## Binomial parameters (2 digits rounded) 
     ##  # A tibble: 2 x 10
-    ##      C9    C6    C1    C8    C2    C3    C4    C5    C7   C10
+    ##      C6    C7    C2    C4    C1    C3    C5    C8    C9   C10
     ##   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
     ## 1  0.5    0    0.25  0.22   0.5   0.5   0.5   0.5   0.5   0.5
     ## 2  0.49   0.2  0.25  0      0.5   0.5   0.5   0.5   0.5   0.5
@@ -148,19 +148,19 @@ fit = variational_fit(
     ## # A tibble: 10 x 2
     ##    entry         value
     ##    <chr>         <dbl>
-    ##  1 C9    0.447        
-    ##  2 C6    0.281        
-    ##  3 C1    0.202        
-    ##  4 C8    0.0693       
-    ##  5 C2    0.00000000433
+    ##  1 C6    0.447        
+    ##  2 C7    0.281        
+    ##  3 C2    0.202        
+    ##  4 C4    0.0693       
+    ##  5 C1    0.00000000433
     ##  6 C3    0.00000000433
-    ##  7 C4    0.00000000433
-    ##  8 C5    0.00000000433
-    ##  9 C7    0.00000000433
+    ##  7 C5    0.00000000433
+    ##  8 C8    0.00000000433
+    ##  9 C9    0.00000000433
     ## 10 C10   0.00000000433
     ## 
     ## 
-    ## COMPLETED: 0.09 mins, with status CONVERGED
+    ## COMPLETED: 0.06 mins, with status CONVERGED
 
 ## Filtering output clusters
 
@@ -168,7 +168,7 @@ Because the model is semi-parametric, it will attempt to use at most `K`
 Binomial clusters. However, most of those clusters might be not
 interesting and you might want to filter them.
 
-`mvbmm` implements 2 possible filters which are available in function
+VIBER implements 2 possible filters which are available in function
 `choose_clusters`.
 
   - Filter 1 \[F1\] uses the cluster size (mixing proportion), which one
@@ -202,15 +202,15 @@ fit = choose_clusters(fit,
     ## # A tibble: 10 x 7
     ##    cluster            pi Above_cut F1    F2    accepted new.labels
     ##    <chr>           <dbl>     <dbl> <lgl> <lgl> <lgl>    <chr>     
-    ##  1 C1      0.202                 2 TRUE  TRUE  TRUE     C1        
-    ##  2 C6      0.281                 2 TRUE  TRUE  TRUE     C2        
-    ##  3 C8      0.0693                2 TRUE  TRUE  TRUE     C3        
-    ##  4 C9      0.447                 2 TRUE  TRUE  TRUE     C4        
-    ##  5 C2      0.00000000433         2 FALSE TRUE  FALSE    C5        
+    ##  1 C2      0.202                 2 TRUE  TRUE  TRUE     C1        
+    ##  2 C4      0.0693                2 TRUE  TRUE  TRUE     C2        
+    ##  3 C6      0.447                 2 TRUE  TRUE  TRUE     C3        
+    ##  4 C7      0.281                 2 TRUE  TRUE  TRUE     C4        
+    ##  5 C1      0.00000000433         2 FALSE TRUE  FALSE    C5        
     ##  6 C3      0.00000000433         2 FALSE TRUE  FALSE    C6        
-    ##  7 C4      0.00000000433         2 FALSE TRUE  FALSE    C7        
-    ##  8 C5      0.00000000433         2 FALSE TRUE  FALSE    C8        
-    ##  9 C7      0.00000000433         2 FALSE TRUE  FALSE    C9        
+    ##  7 C5      0.00000000433         2 FALSE TRUE  FALSE    C7        
+    ##  8 C8      0.00000000433         2 FALSE TRUE  FALSE    C8        
+    ##  9 C9      0.00000000433         2 FALSE TRUE  FALSE    C9        
     ## 10 C10     0.00000000433         2 FALSE TRUE  FALSE    C10
 
 The new model has fewer clusters
@@ -223,11 +223,11 @@ fit
     ##  
     ##     Points N = 231  
     ## Dimensions W = 2  
-    ##        Fit CONVERGED (18 steps; eps. 1e-10) with Variational  
+    ##        Fit CONVERGED (21 steps; eps. 1e-10) with Variational  
     ## 
     ## Binomial parameters (2 digits rounded) 
     ##  # A tibble: 2 x 4
-    ##      C4    C2    C1    C3
+    ##      C3    C4    C1    C2
     ##   <dbl> <dbl> <dbl> <dbl>
     ## 1  0.5    0    0.25  0.22
     ## 2  0.49   0.2  0.25  0   
@@ -236,10 +236,10 @@ fit
     ## # A tibble: 4 x 2
     ##   entry  value
     ##   <chr>  <dbl>
-    ## 1 C4    0.447 
-    ## 2 C2    0.281 
+    ## 1 C3    0.447 
+    ## 2 C4    0.281 
     ## 3 C1    0.202 
-    ## 4 C3    0.0693
+    ## 4 C2    0.0693
 
 ## Plots
 
