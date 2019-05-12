@@ -14,7 +14,6 @@
 #'
 #' @return
 #'
-#' @import ggrepel
 #' @export
 #'
 #' @examples
