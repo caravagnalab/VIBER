@@ -4,7 +4,11 @@ author: "Giulio Caravagna"
 date: "14 February 2019"
 institute: "Institute for Cancer Research"
 email: "giulio.caravagna@ed.ac.uk"
-output: rmarkdown::github_document
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteIndexEntry{VIBER vignette}
+  %\usepackage[UTF-8]{inputenc}
 ---
 
 ```{r setup, include=FALSE}

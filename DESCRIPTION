@@ -10,8 +10,15 @@ Description: Implementation of variational non-parametric Dirichlet models of mu
 License: GPL
 Encoding: UTF-8
 LazyData: true
-Imports: pio, easypar, tidyverse
+Imports: 
+    pio,
+    easypar,
+    tidyverse
+Remotes: 
+    caravagn/pio,
+    caravagn/easypar
 RoxygenNote: 6.1.1
-Suggests: knitr,
+Suggests: 
+    knitr,
     rmarkdown
 VignetteBuilder: knitr
