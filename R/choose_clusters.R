@@ -17,6 +17,7 @@
 #' @export
 #'
 #' @import tidyverse
+#' @import tibble
 #'
 #' @examples
 #' data(fit_mvbmm_example)

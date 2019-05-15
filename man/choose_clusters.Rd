@@ -30,5 +30,5 @@ hard clustering assignments will be updated accordingly.
 }
 \examples{
 data(fit_mvbmm_example)
-choose_cluster(fit_mvbmm_example)
+choose_clusters(fit_mvbmm_example)
 }
