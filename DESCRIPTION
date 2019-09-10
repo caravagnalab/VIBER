@@ -23,3 +23,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/caravagn/VIBER
+BugReports: https://github.com/caravagn/VIBER/issues

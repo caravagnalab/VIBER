@@ -1,11 +1,7 @@
 language: r
 
 cache: packages
-
-before_install:
-  - tlmgr install tcolorbox
-  - tlmgr install bera
-  - tlmgr install nowidow
-  - tlmgr install parnotes
-  - tlmgr install marginfix
   
+r_github_packages:  
+  - caravagn/pio
+  - caravagn/easypar
