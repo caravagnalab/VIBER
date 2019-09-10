@@ -18,12 +18,7 @@ plot_ELBO = function(x, cex = 1)
   ggplot(ELBO, aes(step, ELBO)) +
     geom_line(color = 'steelblue') +
     geom_point(size = 1.5 * cex) +
-    theme_light(base_size = 8 * cex) +
-    theme(
-      legend.position = "bottom",
-      legend.key.size = unit(.3 * cex, "cm"),
-      legend.text = element_text(size = 8 * cex)
-    ) +
+    my_ggplot_theme(cex) +
     labs(
       title = bquote(bold("Status: ") ~ .(x$status)),
       subtitle = bquote(.(x$fit_type)~'with'~epsilon==.(x$epsilon_conv))
@@ -56,12 +51,7 @@ plot_peaks = function(x, cex = 1, colors = NA)
   p = ggplot(peaks, aes(x = Dimension, y = peak, ymax = peak, ymin = 0, color = cluster)) +
     geom_linerange() +
     geom_point() +
-    theme_light(base_size = 8 * cex) +
-    theme(
-      legend.position = "bottom",
-      legend.key.size = unit(.3 * cex, "cm"),
-      legend.text = element_text(size = 8 * cex)
-    ) +
+    my_ggplot_theme(cex) +
     facet_wrap(~cluster, nrow = 1) +
     ylim(0, 1) +
     labs(
@@ -98,12 +88,7 @@ plot_mixing_proportions = function(x, cex = 1, colors = NA)
 
   p = ggplot(prop, aes(x = cluster, y = proportion, fill = cluster)) +
     geom_bar(stat = 'identity') +
-    theme_light(base_size = 8 * cex) +
-    theme(
-      legend.position = "bottom",
-      legend.key.size = unit(.3 * cex, "cm"),
-      legend.text = element_text(size = 8 * cex)
-    ) +
+    my_ggplot_theme(cex) +
     # facet_wrap(~cluster, nrow = 1) +
     ylim(0, 1) +
     labs(
@@ -150,11 +135,8 @@ plot_latent_variables = function(x, cex = 1)
   ggplot(lv, aes(x = Cluster, y = Point, fill = Value)) +
     geom_raster() +
     scale_fill_distiller(palette = 'YlGnBu', direction = 1, limits = c(0, 1)) +
-    theme_light(base_size = 8 * cex) +
+    my_ggplot_theme(cex) +
     theme(
-      legend.position = "bottom",
-      legend.key.size = unit(.3 * cex, "cm"),
-      legend.text = element_text(size = 8 * cex),
       # axis.title.y = element_blank(),
       axis.text.y = element_blank(),
       axis.ticks.y = element_blank()

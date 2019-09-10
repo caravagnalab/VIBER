@@ -17,7 +17,7 @@ Dirichlet mixtures with Binomial components.
 
 #### Help and support
 
-`VIBER` has its own webpage at [GitHub pages](https://caravagn.github.io/VUBER/).
+`VIBER` has its own webpage at [GitHub pages](https://caravagn.github.io/VIBER/).
 
 -----
 

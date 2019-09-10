@@ -26,3 +26,13 @@ plot.vb_bmm <- function(x, ...)
     function(w) plot_2D(x, d1 = w[1], d2 = w[2], ...)
   )
 }
+
+my_ggplot_theme = function(cex = 1) 
+{
+  theme_linedraw(base_size = 11 * cex) +
+    theme(
+      legend.position = "bottom",
+      legend.key.size = unit(.3 * cex, "cm"),
+      panel.background = element_rect(fill = 'white')
+    )
+}
