@@ -17,7 +17,6 @@
 #' @export
 #'
 #' @import tidyverse
-#' @import tibble
 #'
 #' @examples
 #' data(fit_mvbmm_example)
@@ -30,7 +29,7 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   pio::pioStr("\nF2. Min. Binomial peak", binomial_cutoff, suffix = '\n')
 
   # CLuster size
-  tab_clusters = tibble(cluster = names(x$pi_k), pi = x$pi_k)
+  tab_clusters = data.frame(cluster = names(x$pi_k), pi = x$pi_k, stringsAsFactors = F) %>% as_tibble()
 
   # Number of dimensions above binomial_cutoff
   nom_C = round(x$theta_k, 4)
@@ -107,8 +106,9 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   x$pi_k = x$pi_k / C
 
   # recompute clustering assignments..
-  labels = tibble(cluster.Binomial = latent_vars_hard_assignments(lv = list(`z_nk` = x$r_nk,
-                                                  `pi` = x$pi_k)))
+  labels = data.frame(
+    cluster.Binomial = latent_vars_hard_assignments(lv = list(`z_nk` = x$r_nk, `pi` = x$pi_k)),
+    stringsAsFactors = F) %>% as_tibble()
 
   x$labels = labels
   x$x$cluster.Binomial = labels

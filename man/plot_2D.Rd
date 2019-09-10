@@ -29,6 +29,3 @@ plot_2D(x, d1, d2, cex = 1, alpha = 0.3, downsample = Inf,
 Plot the fit for two dimensions, one against the other. Colour each point
 (defined as the ratio of sucesses over trail) according to the clustering assignments.
 }
-\examples{
-TODO
-}

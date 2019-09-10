@@ -4,12 +4,12 @@
 \alias{summary.vb_bmm}
 \title{Print to screen the object}
 \usage{
-\method{summary}{vb_bmm}(x, ...)
+\method{summary}{vb_bmm}(object, ...)
 }
 \arguments{
-\item{x}{An object of class vb_bmm.}
+\item{object}{An object of class vb_bmm.}
 
-\item{...}{}
+\item{...}{Default extra paramaters.}
 }
 \value{
 Nothing, just print to screen.

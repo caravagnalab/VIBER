@@ -14,7 +14,9 @@ Imports:
     crayon,
     pio,
     easypar,
-    tidyverse
+    tidyverse,
+    mobster,
+    reshape2
 Remotes: 
     caravagn/pio,
     caravagn/easypar

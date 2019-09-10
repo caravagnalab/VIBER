@@ -4,7 +4,7 @@
 #' in the data the function \code{plot_2D}.
 #'
 #' @param x An object of class vb_bmm.
-#' @param ...
+#' @param ... Default extra paramaters.
 #'
 #' @return A list of plots, that can be assembled in a unique figure
 #' with other packages like \code{ggpubr}.

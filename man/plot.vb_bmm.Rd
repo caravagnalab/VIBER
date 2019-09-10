@@ -4,12 +4,12 @@
 \alias{plot.vb_bmm}
 \title{Plot the clustering assignments.}
 \usage{
-\method{plot}{vb_bmm}(x, ...)
+plot.vb_bmm(x, ...)
 }
 \arguments{
 \item{x}{An object of class vb_bmm.}
 
-\item{...}{}
+\item{...}{Default extra paramaters.}
 }
 \value{
 A list of plots, that can be assembled in a unique figure

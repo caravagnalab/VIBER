@@ -2,8 +2,8 @@
 
 #' Print to screen the object
 #'
-#' @param x An object of class vb_bmm.
-#' @param ...
+#' @param object An object of class vb_bmm.
+#' @param ... Default extra paramaters.
 #'
 #' @return Nothing, just print to screen.
 #' @export
@@ -11,22 +11,23 @@
 #' @examples
 #' data(fit_mvbmm_example)
 #' print(fit_mvbmm_example)
-summary.vb_bmm <- function(x, ...) {
-  print.vb_bmm(x, ...)
+summary.vb_bmm <- function(object, ...) {
+  print.vb_bmm(object, ...)
 }
 
 #' Print to screen the object
 #'
-#' @param x An object of class vb_bmm.
-#'
+#' @param object An object of class vb_bmm.
+#' @param ... Default extra paramaters.
 #' @return Nothing, just print to screen.
 #' @export
 #'
 #' @examples
 #' data(fit_mvbmm_example)
 #' print(fit_mvbmm_example)
-print.vb_bmm <- function(x, ...)
+print.vb_bmm <- function(object, ...)
 {
+  x = object
   stopifnot(inherits(x, "vb_bmm"))
 
   pioHdr(attributes(x)$modelname)

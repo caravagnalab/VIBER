@@ -17,7 +17,6 @@
 #' @export
 #'
 #' @examples
-#' TODO
 plot_2D = function(x,
                    d1,
                    d2,
@@ -129,7 +128,7 @@ plot_2D_trials = function(x,
       y = d2
     ) +
     guides(color = guide_legend(title = 'Trials', override.aes = list(alpha = 1))) +
-    ggpubr::theme_pubclean(base_size = 8 * cex) +
+    my_ggplot_theme(cex) +
     theme(
       legend.position = "bottom",
       legend.key.size = unit(.3 * cex, "cm"),
