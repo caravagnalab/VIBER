@@ -1,4 +1,4 @@
-initial_condition_kmeans = function(x_NV, x_DP, K, a_0)
+initial_condition_Binomial_kmeans = function(x_NV, x_DP, K, a_0)
 {
   
   package = installed.packages() %>%
