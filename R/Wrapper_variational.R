@@ -50,7 +50,6 @@
 #' @import easypar
 #' @import tidyverse
 #' @import crayon
-#' @import mobster
 #' @import reshape2
 #'
 #' @examples

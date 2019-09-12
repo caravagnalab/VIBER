@@ -23,9 +23,12 @@ plot_2D(x, d1, d2, cex = 1, alpha = 0.3, downsample = Inf,
 \item{colors}{Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.}
 }
 \value{
-
+A ggplot object.
 }
 \description{
 Plot the fit for two dimensions, one against the other. Colour each point
 (defined as the ratio of sucesses over trail) according to the clustering assignments.
+}
+\examples{
+
 }

@@ -15,7 +15,6 @@ Imports:
     pio,
     easypar,
     tidyverse,
-    mobster,
     reshape2
 Remotes: 
     caravagn/pio,

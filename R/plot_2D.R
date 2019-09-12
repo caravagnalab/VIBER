@@ -12,11 +12,12 @@
 #' @param downsample Maximun number of points to plot. Default is \code{Inf}, no downsampling.
 #' @param colors Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.
 #'
-#' @return
+#' @return A ggplot object.
 #'
 #' @export
 #'
 #' @examples
+#' 
 plot_2D = function(x,
                    d1,
                    d2,
