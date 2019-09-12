@@ -1,5 +1,15 @@
 initial_condition_kmeans = function(x_NV, x_DP, K, a_0)
 {
+  
+  package = installed.packages() %>%
+    as_tibble() %>%
+    filter(Package == 'mobster')
+  
+  if(nrow(package) == 0) 
+    stop("Please install package mobster to run this initialization with kmeans: caravagn/mobster ")
+  
+  require(mobster)
+  
   # Data
   XVAF = (x_NV)/(x_DP) %>% as_tibble()
   colnames(XVAF) = colnames(x_NV)
