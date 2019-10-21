@@ -13,31 +13,20 @@ knitr::opts_chunk$set(
 
 # VIBER <img src='man/figures/logo.png' align="right" height="139" />
 
-
-
-
-# VIBER - 
-
-
 <!-- badges: start -->
 
 [![Travis build
 status](https://travis-ci.org/caravagn/VIBER.svg?branch=master)](https://travis-ci.org/caravagn/VIBER)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
 
 `VIBER` is a package to model *variational Binomial Mixtures*.
 
-In this implementation, the statistical model is non-parametric and fit by a variational mean-field approximation to
-the model posterior. 
+The statistical model is non-parametric and fit by a variational mean-field approximation to
+the model posterior. The components are Binomial distributions, which can model count data 
+(e.g., read counts from sequencing data).
 
-
-method to fit 
-Dirichlet mixtures with Binomial components.
-
-that implements methods to fit Binomial mixture models, and visualize clustering results.
-
-
-#### Statistical model
+`VIBER` implements methods to fit and visualize clustering results.
 
 
 
@@ -65,7 +54,7 @@ Giulio Caravagna, PhD. _Institute of Cancer Research, London, UK_.
 
 * Personal webpage: [https://bit.ly/2kc9E6Y](https://sites.google.com/site/giuliocaravagna/), 
 * Email address: [giulio.caravagna@icr.ac.uk](mailto:giulio.caravagna@icr.ac.uk) and [gcaravagn@gmail.com](mailto:gcaravagn@gmail.com)
-* Twitter feed: [@gcaravagna](https://twitter.com/gcaravagna)
+* Twitter feed: [\@gcaravagna](https://twitter.com/gcaravagna)
 * GitHub space: [caravagn](https://github.com/caravagn)
 
 
