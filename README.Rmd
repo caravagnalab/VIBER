@@ -1,4 +1,22 @@
-# VIBER - Variational Binomial Mixtures
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# VIBER <img src='man/figures/logo.png' align="right" height="139" />
+
+
+
+
+# VIBER - 
 
 
 <!-- badges: start -->
@@ -7,13 +25,21 @@
 status](https://travis-ci.org/caravagn/VIBER.svg?branch=master)](https://travis-ci.org/caravagn/VIBER)
 <!-- badges: end -->
 
-This is a package that implements methods to fit Binomial mixture models, and visualize clustering results.
+`VIBER` is a package to model *variational Binomial Mixtures*.
+
+In this implementation, the statistical model is non-parametric and fit by a variational mean-field approximation to
+the model posterior. 
+
+
+method to fit 
+Dirichlet mixtures with Binomial components.
+
+that implements methods to fit Binomial mixture models, and visualize clustering results.
 
 
 #### Statistical model
 
-`VIBER` implements a implements a non-parametric variational method to fit 
-Dirichlet mixtures with Binomial components.
+
 
 #### Help and support
 
