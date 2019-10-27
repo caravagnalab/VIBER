@@ -5,8 +5,10 @@ Version: 0.1.0
 Author: Giulio Caravagna
 Maintainer: Giulio Caravagna <gcaravagn@gmail.com>
 Authors@R: person("Giulio", "Caravagna", role = c("aut", "cre"), email = "gcaravagn@gmail.com")
-Description: Implementation of variational non-parametric Dirichlet models of multivariate
-  Binomial mixtures.
+Description: VIBER is a package to model multi-variate variational Binomial mixture models.
+    The statistical model is non-parametric and fit by a variational mean-field approximation to
+    the model posterior. The components are Binomial distributions, which can mukti-dimensional 
+    model count data.
 License: GPL
 Encoding: UTF-8
 LazyData: true

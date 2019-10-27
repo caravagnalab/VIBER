@@ -45,8 +45,8 @@ initial_condition_Binomial_kmeans = function(x_NV, x_DP, K, a_0)
   {
     for(j in 1:ncol(beta_mu))
     {
-      a[i,j] = mobster:::.estBetaParams(beta_mu[i,j], beta_var[i,j])$a
-      b[i,j] = mobster:::.estBetaParams(beta_mu[i,j], beta_var[i,j])$b
+      a[i,j] = beta_converter(beta_mu[i,j], beta_var[i,j])$a
+      b[i,j] = beta_converter(beta_mu[i,j], beta_var[i,j])$b
     }
   }
 
@@ -60,6 +60,13 @@ initial_condition_Binomial_kmeans = function(x_NV, x_DP, K, a_0)
   return(list(a=a, b=b, X = XVAF %>% as_tibble()))
 }
 
+beta_converter = function(mu, var)
+{
+  if(var == 0) var = 1e-9
+  alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
+  beta <- alpha * (1 / mu - 1)
+  return(params = list(a = alpha, b = beta))
+}
 
 # initial_condition_prv_clusters = function(x_NV, x_DP)
 # {
@@ -125,3 +132,6 @@ initial_condition_Binomial_kmeans = function(x_NV, x_DP, K, a_0)
 #
 #   return(list(a=a_Beta,b=b_Beta, X=ret_vaf))
 # }
+
+
+
