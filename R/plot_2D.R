@@ -77,14 +77,16 @@ plot_2D = function(x,
       aes(
         x = eval(parse(text = d1)),
         y = eval(parse(text = d2)),
-        color = cluster.Binomial
+        fill = cluster.Binomial
       ),
       alpha = 1,
       size = 3 * cex,
-      pch = 15
-    )
+      pch = 22,
+      color = 'black'
+    ) +
+    guides(fill = FALSE)
 
-  return(add_color_pl(x, p, colors))
+  return(add_fill_pl(x, add_color_pl(x, p, colors), colors))
 }
 
 plot_2D_trials = function(x,
