@@ -179,4 +179,3 @@ plot_latent_variables = function(x, cex = 1)
   # pl
 }
 
-
