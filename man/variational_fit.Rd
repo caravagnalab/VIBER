@@ -6,7 +6,7 @@
 \usage{
 variational_fit(x, y, K = 10, alpha_0 = 1e-06, a_0 = 1, b_0 = 1,
   max_iter = 5000, epsilon_conv = 1e-10, samples = 10,
-  q_init = "prior", trace = FALSE)
+  q_init = "prior", trace = FALSE, description = "My VIBER model")
 }
 \arguments{
 \item{x}{A matrix where each column is a dimension of the multivariate Binomial,

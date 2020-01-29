@@ -10,7 +10,8 @@ vb_bmm_MV <-
            max_iter,
            epsilon_conv,
            save_trace,
-           q_init
+           q_init,
+           description
   )
   {
     # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
@@ -315,7 +316,7 @@ vb_bmm_MV <-
         ),
         class = "vb_bmm",
         call = match.call(),
-        modelname = "VIBER - Variational inference for Binomial mixtures"
+        modelname = description
       )
 
     return(obj)

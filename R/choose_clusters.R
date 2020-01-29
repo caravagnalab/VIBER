@@ -23,11 +23,15 @@
 #' choose_clusters(fit_mvbmm_example)
 choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_cutoff = 0.02)
 {
-  pio::pioTit(paste0("Selecting Binomial clusters (F1,2-heuristic)."))
-  pio::pioStr("\nF1.       Cluster size", pi_cutoff)
-  pio::pioStr("\nF2. Num. of dimensions", dimensions_cutoff)
-  pio::pioStr("\nF2. Min. Binomial peak", binomial_cutoff, suffix = '\n')
+  # pio::pioTit(paste0("Selecting Binomial clusters (F1,2-heuristic)."))
+  # pio::pioStr("\nF1.       Cluster size", pi_cutoff)
+  # pio::pioStr("\nF2. Num. of dimensions", dimensions_cutoff)
+  # pio::pioStr("\nF2. Min. Binomial peak", binomial_cutoff, suffix = '\n')
 
+  original_K = length(x$pi_k)
+  
+  if(original_K == 1) return(x)
+  
   # CLuster size
   tab_clusters = data.frame(cluster = names(x$pi_k), pi = x$pi_k, stringsAsFactors = F) %>% as_tibble()
 
@@ -65,7 +69,7 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   # Mapping old labels to new ones
   tab_clusters$new.labels = paste0('C', 1:nrow(tab_clusters))
 
-  print(tab_clusters)
+  # print(tab_clusters)
 
   mapping = tab_clusters$new.labels
   names(mapping) = tab_clusters$cluster
@@ -117,6 +121,14 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   # Update num of clusters
   x$K = K
 
+  # Report to console
+  new_k =  length(x$pi_k)
+  
+  if(new_k != original_K)
+    cli::cli_alert_success(
+      "Reduced to k = {.value {new_k}} (from {.value {original_K}}) selecting VIBER cluster(s) with \u03C0 > {.value {pi_cutoff}}, and Binomial p > {.value {binomial_cutoff}} in w > {.value {dimensions_cutoff}} dimension(s)."
+    )
+  
   x
 }
 

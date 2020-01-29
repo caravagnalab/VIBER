@@ -51,6 +51,7 @@
 #' @import tidyverse
 #' @import crayon
 #' @import reshape2
+#' @import cli
 #'
 #' @examples
 #' data(mvbmm_example)
@@ -66,7 +67,8 @@ variational_fit = function(x,
                            epsilon_conv = 1e-10,
                            samples = 10,
                            q_init = 'prior',
-                           trace = FALSE)
+                           trace = FALSE,
+                           description = "My VIBER model")
 {
   best = NULL
 
@@ -86,21 +88,29 @@ variational_fit = function(x,
 
   TIME = as.POSIXct(Sys.time(), format = "%H:%M:%S")
 
+  # # Console header
+  # cat(bold("\n\tINPUT"))
+  # 
+  # pioStr("\n  Points", paste0('N = ', nrow(x)))
+  # pioStr("\nClusters", paste0('K = ', K), suffix = "(max)\n")
+  # 
+  # pioStr("\nDirichlet", paste0('alpha = ', alpha_0), suffix = "(conc.)")
+  # pioStr("\n     Beta", paste0('a0 = ', a_0, '; b0 =', b_0), suffix = "(shape)\n")
+  # pioStr("\n     Beta (posterior)", q_init)
+  # 
+  # pioStr(
+  #   "\n Optimize", paste0('epsilon = ', epsilon_conv, '; steps =', max_iter, '; r = ', samples),
+  #   suffix = '\n\n'
+  # )
   # Console header
-  cat(bold("\n\tINPUT"))
-
-  pioStr("\n  Points", paste0('N = ', nrow(x)))
-  pioStr("\nClusters", paste0('K = ', K), suffix = "(max)\n")
-
-  pioStr("\nDirichlet", paste0('alpha = ', alpha_0), suffix = "(conc.)")
-  pioStr("\n     Beta", paste0('a0 = ', a_0, '; b0 =', b_0), suffix = "(shape)\n")
-  pioStr("\n     Beta (posterior)", q_init)
-
-  pioStr(
-    "\n Optimize", paste0('epsilon = ', epsilon_conv, '; steps =', max_iter, '; r = ', samples),
-    suffix = '\n\n'
+  cli::cli_alert_info(
+    "Input n = {.value {nrow(x)}}, with k < {.value {K}}. Dirichlet concentration {.field \u03B1 = {alpha_0}}."
+    )
+  
+  cli::cli_alert_info(
+    "Beta (a_0, b_0) = ({.value {a_0}}, {.value {b_0}}); q_i = {.value {q_init}}. Optimise: \u03B5 = {.value {epsilon_conv}} or {.value {max_iter}} steps, r = {.value {samples}} starts."
   )
-
+  
   # Fits are obtained using the easypar package
   # which allows easy parallelization of R functions
   #
@@ -118,7 +128,8 @@ variational_fit = function(x,
         max_iter = max_iter,
         epsilon_conv = epsilon_conv,
         save_trace = trace,
-        q_init = q_init
+        q_init = q_init,
+        description = description
       )
     },
     PARAMS = lapply(1:samples, list),
@@ -157,12 +168,20 @@ variational_fit = function(x,
   }
 
   # Print some output
-  cat(bold("\n\nBEST FIT\n\n"))
+  TIME = difftime(as.POSIXct(Sys.time(), format = "%H:%M:%S"), TIME, units = "mins")
+  
+  cat('\n')
+  
+  cli::cli_alert_success(
+    paste(bold("VIBER fit"), 'completed in',
+          round(TIME, 2),
+          'mins (status: {.value {ifelse(best$status == "CONVERGED", crayon::green("converged"), crayon::red(best$status))}})'))
+  
+  cat('\n')
+  
   print(best)
 
-  TIME = difftime(as.POSIXct(Sys.time(), format = "%H:%M:%S"), TIME, units = "mins")
   best$CPU_time = TIME
-  cat(bold("\n\nCOMPLETED: ") %+% cyan(round(TIME, 2), 'mins, with status', best$status, '\n'))
 
   return(best)
 }
