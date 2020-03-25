@@ -53,7 +53,8 @@ devtools::install_github("caravagn/VIBER")
 
 Giulio Caravagna, PhD. _Institute of Cancer Research, London, UK_.
 
-[![](https://img.shields.io/badge/Email-gcaravagn@gmail.com-seagreen.svg)](mailto:gcaravagn@gmail.com)
-[![](https://img.shields.io/badge/Github-caravagn-seagreen.svg)](https://github.com/caravagn)
-[![](https://img.shields.io/badge/Twitter-@gcaravagna-steelblue.svg)](https://twitter.com/gcaravagna)
-[![](https://img.shields.io/badge/Personal%20webpage-https://bit.ly/2kc9E6Y-red.svg)](https://sites.google.com/site/giuliocaravagna/)
+[![](https://img.shields.io/badge/Email-gcaravagn@gmail.com-informational.svg?style=social)](mailto:gcaravagn@gmail.com)
+[![](https://img.shields.io/badge/caravagn-informational.svg?style=social&logo=GitHub)](https://github.com/caravagn)
+[![](https://img.shields.io/badge/@gcaravagna-informational.svg?style=social&logo=Twitter)](https://twitter.com/gcaravagna)
+[![](https://img.shields.io/badge/Homepage-informational.svg?style=social&logo=Google)](https://sites.google.com/site/giuliocaravagna/)
+
