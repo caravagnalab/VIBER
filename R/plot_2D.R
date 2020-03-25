@@ -61,7 +61,7 @@ plot_2D = function(x,
       y = d2
     ) +
     guides(color = guide_legend(title = 'Cluster', override.aes = list(alpha = 1))) +
-    my_ggplot_theme(cex) +
+    VIBER:::my_ggplot_theme(cex) +
     theme(
       legend.position = "bottom",
       legend.key.size = unit(.3 * cex, "cm"),
@@ -87,7 +87,7 @@ plot_2D = function(x,
     ) +
     guides(fill = FALSE)
 
-  return(add_fill_pl(x, add_color_pl(x, p, colors), colors))
+  return(VIBER:::add_fill_pl(x, VIBER:::add_color_pl(x, p, colors), colors))
 }
 
 plot_2D_trials = function(x,
@@ -182,7 +182,7 @@ add_color_pl =  function(x, pl, colors)
   if(!is.vector(colors) | any(is.na(colors))) return(pl)
 
   # clusters in x
-  cl = x$x$cluster.Binomial[!is.na(x$x$cluster.Binomial)]
+  cl = x$x$cluster.Binomial[!is.na(x$x$cluster.Binomial), ]
   wh_col = unique(cl)
   stopifnot(all(wh_col %in% names(colors)))
 
@@ -195,7 +195,7 @@ add_fill_pl =  function(x, pl, colors)
   if(!is.vector(colors) | any(is.na(colors))) return(pl)
 
   # clusters in x
-  cl = x$x$cluster.Binomial[!is.na(x$x$cluster.Binomial)]
+  cl = x$x$cluster.Binomial[!is.na(x$x$cluster.Binomial), ]
   wh_col = unique(cl)
   stopifnot(all(wh_col %in% names(colors)))
 

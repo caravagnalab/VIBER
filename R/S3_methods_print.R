@@ -74,7 +74,7 @@ print.vb_bmm <- function(object, ...)
     ' Clusters: \u03C0 = {.value {pi_label}}, with \u03C0 > 0.'
   )
   
-  bin = round(x$theta_k[, sor_p], 2)
+  bin = round(x$theta_k[, sor_p, drop = FALSE], 2)
   bin = bin[, names(pi), drop = FALSE]
   
   bin_label = apply(bin, 2, function(x) paste0('<', paste0(x, collapse = ', '), '>'))
