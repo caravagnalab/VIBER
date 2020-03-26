@@ -26,8 +26,8 @@ plot_2D = function(x,
                    downsample = Inf,
                    colors = NA)
 {
-  data = get_2D_points(x, d1, d2)
-  data$cluster.Binomial = x$labels$cluster.Binomial
+  data = VIBER:::get_2D_points(x, d1, d2)
+  data[['cluster.Binomial']] = x$labels$cluster.Binomial
 
   # Fits
   points = x$theta_k[c(d1, d2), unique(data$cluster.Binomial[!is.na(data$cluster.Binomial)]), drop = F]
@@ -182,7 +182,9 @@ add_color_pl =  function(x, pl, colors)
   if(!is.vector(colors) | any(is.na(colors))) return(pl)
 
   # clusters in x
-  cl = x$x$cluster.Binomial[!is.na(x$x$cluster.Binomial), ]
+  cl = x$x %>% pull(1)
+  cl = cl[!is.na(unlist(cl))]
+  
   wh_col = unique(cl)
   stopifnot(all(wh_col %in% names(colors)))
 
@@ -195,7 +197,10 @@ add_fill_pl =  function(x, pl, colors)
   if(!is.vector(colors) | any(is.na(colors))) return(pl)
 
   # clusters in x
-  cl = x$x$cluster.Binomial[!is.na(x$x$cluster.Binomial), ]
+  # clusters in x
+  cl = x$x %>% pull(cluster.Binomial)
+  cl = cl[!is.na(cl)]
+
   wh_col = unique(cl)
   stopifnot(all(wh_col %in% names(colors)))
 

@@ -115,8 +115,8 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
     stringsAsFactors = F) %>% as_tibble()
 
   x$labels = labels
-  x$x$cluster.Binomial = labels
-  x$y$cluster.Binomial = labels
+  x$x$cluster.Binomial = labels %>% pull(cluster.Binomial)
+  x$y$cluster.Binomial = labels %>% pull(cluster.Binomial)
 
   # Update num of clusters
   x$K = K
