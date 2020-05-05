@@ -13,11 +13,20 @@
 #' @param x A matrix where each column is a dimension of the multivariate Binomial,
 #' and each row is an input point. Values of this matrix represent the number of
 #' successes of independent Bernoulli trials. This matrix and \code{y} should have
-#' the same dimension.
+#' the same dimension  (\code{N x K}, \code{N} points, \code{K} dimensions).
 #' @param y A matrix where each column is a dimension of the multivariate Binomial,
 #' and each row is an input point. Values of this matrix represent the number of
 #' attempts of independent Bernoulli trials. This matrix and \code{x} should have
-#' the same dimension.
+#' the same dimension  (\code{N x K}, \code{N} points, \code{K} dimensions).
+#' @param data Extra data.frame  (\code{N x K}, \code{N} points, \code{W} attributes) 
+#' to store inside the output object \code{W} annotations for each one of the 
+#' \code{N} input points. This parameter can also be \code{NULL}, in this case
+#' there is no extra annotation associated to the input. The annotations are necessary
+#' if one seeks to use VIBER to analyse cancer multi-sample sequencing data (the
+#' Binomial counts are  in that case \emph{"cancer sequencing read counts"}); in that
+#' case in the annotations there must be two columns, \code{gene} and \code{driver}
+#' reporting a gene identifier for the input mutation, and its boolean driver status.
+#' The extra annotation data will be stored in the \code{data} field of the output.
 #' @param K The maximum number of clusters returned, it should be lower than the
 #' number of rows of \code{x} and \code{y}. Default is \code{K = 10}; lower values
 #' speed up convergence.
@@ -59,6 +68,7 @@
 #' print(f)
 variational_fit = function(x,
                            y,
+                           data = NULL,
                            K = 10,
                            alpha_0 = 1e-6,
                            a_0 = 1,
@@ -75,16 +85,17 @@ variational_fit = function(x,
   pioHdr('VIBER - variational fit')
 
   # Stop if errors on the input
-  var_check_input(x,
-                  y,
-                  K,
-                  alpha_0,
-                  a_0,
-                  b_0,
-                  max_iter,
-                  epsilon_conv,
-                  samples,
-                  q_init)
+  var_check_input(x = x,
+                  y = y,
+                  K = K,
+                  data = data,
+                  alpha_0 = alpha_0,
+                  a_0 = a_0,
+                  b_0 = b_0,
+                  max_iter = max_iter,
+                  epsilon_conv = epsilon_conv,
+                  samples = samples,
+                  q_init = q_init)
 
   TIME = as.POSIXct(Sys.time(), format = "%H:%M:%S")
 
@@ -167,6 +178,9 @@ variational_fit = function(x,
     }
   }
 
+  # Add extra data
+  best$data = data
+  
   # Print some output
   TIME = difftime(as.POSIXct(Sys.time(), format = "%H:%M:%S"), TIME, units = "mins")
   

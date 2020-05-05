@@ -5,7 +5,7 @@
 \title{Filter clusters heuristic}
 \usage{
 choose_clusters(x, binomial_cutoff = 0.05, dimensions_cutoff = 1,
-  pi_cutoff = 0.02)
+  pi_cutoff = 0.02, re_assign = FALSE)
 }
 \arguments{
 \item{x}{An object of class 'vb_bmm'.}
@@ -15,6 +15,10 @@ choose_clusters(x, binomial_cutoff = 0.05, dimensions_cutoff = 1,
 \item{dimensions_cutoff}{Minimum number of dimensions where we want to detect a Binomial component.}
 
 \item{pi_cutoff}{Minimum size of the mixture component.}
+
+\item{re_assign}{If \code{TRUE}, point assigned to a cluster that is filtered our, are re-assigned
+from the density function (without updating the parameters). Otherwise, clustering assignments for
+those points are returned as \code{NA}.}
 }
 \value{
 An object of class 'vb_bmm'.

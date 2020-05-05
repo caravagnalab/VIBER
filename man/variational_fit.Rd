@@ -4,20 +4,31 @@
 \alias{variational_fit}
 \title{Variational fit for Binomial mixtures}
 \usage{
-variational_fit(x, y, K = 10, alpha_0 = 1e-06, a_0 = 1, b_0 = 1,
-  max_iter = 5000, epsilon_conv = 1e-10, samples = 10,
-  q_init = "prior", trace = FALSE, description = "My VIBER model")
+variational_fit(x, y, data = NULL, K = 10, alpha_0 = 1e-06,
+  a_0 = 1, b_0 = 1, max_iter = 5000, epsilon_conv = 1e-10,
+  samples = 10, q_init = "prior", trace = FALSE,
+  description = "My VIBER model")
 }
 \arguments{
 \item{x}{A matrix where each column is a dimension of the multivariate Binomial,
 and each row is an input point. Values of this matrix represent the number of
 successes of independent Bernoulli trials. This matrix and \code{y} should have
-the same dimension.}
+the same dimension  (\code{N x K}, \code{N} points, \code{K} dimensions).}
 
 \item{y}{A matrix where each column is a dimension of the multivariate Binomial,
 and each row is an input point. Values of this matrix represent the number of
 attempts of independent Bernoulli trials. This matrix and \code{x} should have
-the same dimension.}
+the same dimension  (\code{N x K}, \code{N} points, \code{K} dimensions).}
+
+\item{data}{Extra data.frame  (\code{N x K}, \code{N} points, \code{W} attributes) 
+to store inside the output object \code{W} annotations for each one of the 
+\code{N} input points. This parameter can also be \code{NULL}, in this case
+there is no extra annotation associated to the input. The annotations are necessary
+if one seeks to use VIBER to analyse cancer multi-sample sequencing data (the
+Binomial counts are  in that case \emph{"cancer sequencing read counts"}); in that
+case in the annotations there must be two columns, \code{gene} and \code{driver}
+reporting a gene identifier for the input mutation, and its boolean driver status.
+The extra annotation data will be stored in the \code{data} field of the output.}
 
 \item{K}{The maximum number of clusters returned, it should be lower than the
 number of rows of \code{x} and \code{y}. Default is \code{K = 10}; lower values

@@ -9,8 +9,17 @@
 #' @param d2 The name of the dimension to plot (y-axis).
 #' @param cex Cex of the points and the overall plot.
 #' @param alpha Alpha of the points.
+#' @param cut_zeros If \code{TRUE}, remove points that are 0 in both dimensions.
+#' @param binning_b This parameter goes with \code{binning_n}. If both \code{NA}, 
+#' no binning is computed. If a real valuem points are binned in a grid of size
+#' \code{binning_b} by \code{binning_b}.
+#' @param binning_n This parameter goes with \code{binning_b}. If both \code{NA}, 
+#' no binnig is computed. If an integer value points are binned in a grid of size
+#'defined by \code{binning_b}, and up to \code{binning_n} points are sampled 
+#' per bin according to each cluster whose points map inside the bin.
 #' @param downsample Maximun number of points to plot. Default is \code{Inf}, no downsampling.
 #' @param colors Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.
+#' @param bin_params If \code{TRUE} it adds also a point to show the fit Binomial success probabilities.
 #'
 #' @return A ggplot object.
 #'
@@ -23,11 +32,43 @@ plot_2D = function(x,
                    d2,
                    cex = 1,
                    alpha = 0.3,
+                   cut_zeroes = TRUE,
+                   binning_n = NA,
+                   binning_b = NA,
                    downsample = Inf,
-                   colors = NA)
+                   colors = NA,
+                   bin_params = FALSE)
 {
   data = VIBER:::get_2D_points(x, d1, d2)
   data[['cluster.Binomial']] = x$labels$cluster.Binomial
+  
+  # Cutting zeroes
+  if(cut_zeroes) {
+    data = data[!(data[[d1]] == 0 & data[[d2]] == 0), , drop = FALSE]
+    
+    if(nrow(data) == 0) {
+      warning(d1, ' vs ', d2, ' curring 0s there are no points, returning empty plot')
+      return(ggplot() + geom_blank())
+    }
+  }
+  
+  # Binning
+  if(!is.na(binning_n) & !is.na(binning_b))
+  {
+    stopifnot(is.numeric(binning_n))
+    stopifnot(is.numeric(binning_b))
+    stopifnot(binning_n > 0)
+    stopifnot(binning_b > 0 & binning_b < 1)
+    
+    # Squares of size binning_n x binning_n
+    data$b1 = round(data[[d1]]/binning_n)
+    data$b2 = round(data[[d2]]/binning_b)
+    
+    # Sample per cluster up to binning_n points
+    data = data %>%
+      dplyr::group_by(b1, b2, cluster.Binomial) %>%
+      dplyr::sample_n(min(n(), binning_n))
+  }  
 
   # Fits
   points = x$theta_k[c(d1, d2), unique(data$cluster.Binomial[!is.na(data$cluster.Binomial)]), drop = F]
@@ -73,19 +114,24 @@ plot_2D = function(x,
     geom_hline(yintercept = 0,
                colour = "darkgray",
                size = .3) +
-    geom_point(
-      data = points,
-      aes(
-        x = eval(parse(text = d1)),
-        y = eval(parse(text = d2)),
-        fill = cluster.Binomial
-      ),
-      alpha = 1,
-      size = 3 * cex,
-      pch = 22,
-      color = 'black'
-    ) +
     guides(fill = FALSE)
+  
+  if(bin_params)
+  {
+    p = p +
+      geom_point(
+        data = points,
+        aes(
+          x = eval(parse(text = d1)),
+          y = eval(parse(text = d2)),
+          fill = cluster.Binomial
+        ),
+        alpha = 1,
+        size = 3 * cex,
+        pch = 22,
+        color = 'black'
+      )
+  }
 
   return(VIBER:::add_fill_pl(x, VIBER:::add_color_pl(x, p, colors), colors))
 }

@@ -5,7 +5,7 @@
 \title{2D clusters plot.}
 \usage{
 plot_2D(x, d1, d2, cex = 1, alpha = 0.3, downsample = Inf,
-  colors = NA)
+  colors = NA, bin_params = FALSE)
 }
 \arguments{
 \item{x}{An object of class 'vb_bmm'.}
@@ -21,6 +21,8 @@ plot_2D(x, d1, d2, cex = 1, alpha = 0.3, downsample = Inf,
 \item{downsample}{Maximun number of points to plot. Default is \code{Inf}, no downsampling.}
 
 \item{colors}{Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.}
+
+\item{bin_params}{If \code{TRUE} it adds also a point to show the fit Binomial success probabilities.}
 }
 \value{
 A ggplot object.

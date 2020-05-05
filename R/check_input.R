@@ -1,6 +1,7 @@
 # Error checking inputs
 var_check_input = function(x,
                            y,
+                           data,
                            K,
                            alpha_0,
                            a_0,
@@ -27,7 +28,11 @@ var_check_input = function(x,
   stopifnot(all(x <= y))
 
   stopifnot(all(colnames(x) == colnames(y)))
-
+  
+  # extra data
+  if(!all(is.null(data))) 
+    stopifnot(nrow(data) == nrow(x))
+  
   # other params
   stopifnot(samples >= 1)
 

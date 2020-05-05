@@ -12,6 +12,9 @@
 #' @param binomial_cutoff Minimum Binomial success probability.
 #' @param dimensions_cutoff Minimum number of dimensions where we want to detect a Binomial component.
 #' @param pi_cutoff Minimum size of the mixture component.
+#' @param re_assign If \code{TRUE}, point assigned to a cluster that is filtered our, are re-assigned
+#' from the density function (without updating the parameters). Otherwise, clustering assignments for
+#' those points are returned as \code{NA}.
 #'
 #' @return An object of class 'vb_bmm'.
 #' @export
@@ -21,7 +24,7 @@
 #' @examples
 #' data(fit_mvbmm_example)
 #' choose_clusters(fit_mvbmm_example)
-choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_cutoff = 0.02)
+choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_cutoff = 0.02, re_assign = FALSE)
 {
   # pio::pioTit(paste0("Selecting Binomial clusters (F1,2-heuristic)."))
   # pio::pioStr("\nF1.       Cluster size", pi_cutoff)
@@ -62,6 +65,8 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   # partitions of clusters
   detect.clones = tab_clusters %>% filter(accepted)
   rejected.clones = tab_clusters %>% filter(!accepted)
+  
+  idx_to_remove = which((x$labels %>% pull) %in% rejected.clones$cluster)
 
   K = nrow(detect.clones)
   K.rj = nrow(rejected.clones)
@@ -70,7 +75,6 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   tab_clusters$new.labels = paste0('C', 1:nrow(tab_clusters))
 
   # print(tab_clusters)
-
   mapping = tab_clusters$new.labels
   names(mapping) = tab_clusters$cluster
 
@@ -104,16 +108,25 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   C = rowSums(x$r_nk)
   for (i in 1:nrow(x$r_nk))
     x$r_nk[i, ] = x$r_nk[i, ] / C[i]
-
-  # renormalize mixing proportions
+  
+  # Now force NA values for those points that used to belong to clusters that have been cancelled
+  if(!re_assign) {
+    x$r_nk[idx_to_remove, ] = NA
+  }
+  
+  # renormalize mixing proportions to recompute clusters
   C = sum(x$pi_k)
   x$pi_k = x$pi_k / C
 
   # recompute clustering assignments..
   labels = data.frame(
-    cluster.Binomial = latent_vars_hard_assignments(lv = list(`z_nk` = x$r_nk, `pi` = x$pi_k)),
+    cluster.Binomial = VIBER:::latent_vars_hard_assignments(lv = list(`z_nk` = x$r_nk, `pi` = x$pi_k)),
     stringsAsFactors = F) %>% as_tibble()
-
+  
+  # Cluster counts determine the new pi
+  pi_counts = labels[[1]] %>% table
+  x$pi_k = pi_counts/sum(pi_counts)
+  
   x$labels = labels
   x$x$cluster.Binomial = labels %>% pull(cluster.Binomial)
   x$y$cluster.Binomial = labels %>% pull(cluster.Binomial)
@@ -127,6 +140,11 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
   if(new_k != original_K)
     cli::cli_alert_success(
       "Reduced to k = {.value {new_k}} (from {.value {original_K}}) selecting VIBER cluster(s) with \u03C0 > {.value {pi_cutoff}}, and Binomial p > {.value {binomial_cutoff}} in w > {.value {dimensions_cutoff}} dimension(s)."
+    )
+  
+  if(!re_assign & sum(is.na(x$x$cluster.Binomial)) > 0)
+    cli::cli_alert_success(
+      "{.value {sum(is.na(x$x$cluster.Binomial))}} points are now not assigned (cluster = NA) because their cluster has been removed."
     )
   
   x
