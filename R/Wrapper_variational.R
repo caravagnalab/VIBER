@@ -57,7 +57,7 @@
 #'
 #' @import pio
 #' @import easypar
-#' @import tidyverse
+#' @import dplyr
 #' @import crayon
 #' @import reshape2
 #' @import cli
@@ -146,7 +146,7 @@ variational_fit = function(x,
       )
     },
     PARAMS = lapply(1:samples, list),
-    packages = c("crayon", "pio", "VIBER", "tidyverse"),
+    packages = c("crayon", "pio", "VIBER", "dplyr", "ggplot2"),
     export = ls(globalenv(), all.names = TRUE),
     cores.ratio = .8,
     parallel = TRUE,

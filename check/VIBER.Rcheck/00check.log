@@ -18,6 +18,7 @@
 * checking whether package ‘VIBER’ can be installed ... WARNING
 Found the following significant warnings:
   Warning: replacing previous import ‘cli::num_ansi_colors’ by ‘crayon::num_ansi_colors’ when loading ‘VIBER’
+  Warning: replacing previous import ‘crayon::%+%’ by ‘ggplot2::%+%’ when loading ‘VIBER’
 See ‘/Users/gcaravagna/Documents/GitHub/VIBER/check/VIBER.Rcheck/00install.out’ for details.
 * checking installed package size ... OK
 * checking package directory ... OK
@@ -35,17 +36,17 @@ See ‘/Users/gcaravagna/Documents/GitHub/VIBER/check/VIBER.Rcheck/00install.out
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking dependencies in R code ... WARNING
-'::' or ':::' imports not declared from:
-  ‘ctree’ ‘dplyr’
-'library' or 'require' call not declared from: ‘mobster’
-'library' or 'require' call to ‘mobster’ in package code.
-  Please use :: or requireNamespace() instead.
-  See section 'Suggested packages' in the 'Writing R Extensions' manual.
+'::' or ':::' import not declared from: ‘ctree’
 There are ::: calls to the package's namespace in its code. A package
   almost never needs to use ::: for its own objects:
   ‘add_color_pl’ ‘add_fill_pl’ ‘get_2D_points’
   ‘latent_vars_hard_assignments’ ‘my_ggplot_theme’
 * checking S3 generic/method consistency ... WARNING
+print:
+  function(x, ...)
+print.vb_bmm:
+  function(object, ...)
+
 print:
   function(x, ...)
 print.vb_bmm:
@@ -70,10 +71,6 @@ get_clone_trees: no visible binding for global variable ‘is.clonal’
 get_clone_trees: no visible binding for global variable ‘variantID’
 get_clone_trees: no visible binding for global variable ‘is.driver’
 initial_condition_Binomial_kmeans: no visible global function
-  definition for ‘installed.packages’
-initial_condition_Binomial_kmeans: no visible binding for global
-  variable ‘Package’
-initial_condition_Binomial_kmeans: no visible global function
   definition for ‘kmeans’
 initial_condition_Binomial_kmeans: no visible binding for global
   variable ‘cluster.kmeans’
@@ -83,6 +80,8 @@ initial_condition_Binomial_kmeans: no visible global function
   definition for ‘var’
 initial_condition_Binomial_kmeans: no visible binding for global
   variable ‘value’
+initial_condition_Binomial_kmeans: no visible global function
+  definition for ‘spread’
 initial_condition_Binomial_kmeans: no visible global function
   definition for ‘runif’
 initial_condition_Binomial_kmeans : extr: no visible global function
@@ -111,13 +110,13 @@ plot_peaks: no visible binding for global variable ‘proportion’
 vb_bmm_MV: no visible global function definition for ‘runif’
 vb_bmm_MV: no visible global function definition for ‘flush.console’
 Undefined global functions or variables:
-  Cluss_ass Cluster Dimension F1 F2 Package Point Value accepted b1 b2
-  cluster cluster.Binomial cluster.kmeans combn driver flush.console
-  gene installed.packages is.clonal is.driver kmeans new.labels peak
-  proportion runif step uncertainty value var variable variantID
+  Cluss_ass Cluster Dimension F1 F2 Point Value accepted b1 b2 cluster
+  cluster.Binomial cluster.kmeans combn driver flush.console gene
+  is.clonal is.driver kmeans new.labels peak proportion runif spread
+  step uncertainty value var variable variantID
 Consider adding
   importFrom("stats", "kmeans", "runif", "step", "var")
-  importFrom("utils", "combn", "flush.console", "installed.packages")
+  importFrom("utils", "combn", "flush.console")
 to your NAMESPACE file.
 * checking Rd files ... NOTE
 prepare_Rd: plot_2D.Rd:56-58: Dropping empty section \examples
@@ -148,10 +147,11 @@ Extensions’ manual.
 * checking installed files from ‘inst/doc’ ... OK
 * checking files in ‘vignettes’ ... OK
 * checking examples ... OK
-* checking for unstated dependencies in vignettes ... OK
+* checking for unstated dependencies in vignettes ... NOTE
+'library' or 'require' call not declared from: ‘tidyverse’
 * checking package vignettes in ‘inst/doc’ ... OK
 * checking running R code from vignettes ... NONE
   ‘VIBER.Rmd’ using ‘UTF-8’... OK
 * checking re-building of vignette outputs ... OK
 * DONE
-Status: 5 WARNINGs, 2 NOTEs
+Status: 5 WARNINGs, 3 NOTEs

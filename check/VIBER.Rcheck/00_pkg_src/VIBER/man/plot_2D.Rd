@@ -29,12 +29,12 @@ plot_2D(
 
 \item{alpha}{Alpha of the points.}
 
-\item{binning_n}{This parameter goes with \code{binning_b}. If both \code{NA}, 
+\item{binning_n}{This parameter goes with \code{binning_b}. If both \code{NA},
 no binnig is computed. If an integer value points are binned in a grid of size
-defined by \code{binning_b}, and up to \code{binning_n} points are sampled 
+defined by \code{binning_b}, and up to \code{binning_n} points are sampled
 per bin according to each cluster whose points map inside the bin.}
 
-\item{binning_b}{This parameter goes with \code{binning_n}. If both \code{NA}, 
+\item{binning_b}{This parameter goes with \code{binning_n}. If both \code{NA},
 no binning is computed. If a real valuem points are binned in a grid of size
 \code{binning_b} by \code{binning_b}.}
 

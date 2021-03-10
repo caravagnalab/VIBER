@@ -1,5 +1,5 @@
 ---
-title: "VIBER Vignette"
+title: "VIBER"
 author: "Giulio Caravagna"
 date: "14 February 2019"
 institute: "Institute for Cancer Research"
@@ -7,20 +7,17 @@ email: "giulio.caravagna@ed.ac.uk"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::knitr}
-  %\VignetteIndexEntry{VIBER vignette}
+  %\VignetteIndexEntry{VIBER}
   %\usepackage[UTF-8]{inputenc}
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 ```
 
-Install the package from github, use `devtools` to install directly from GitHub and install required packages as well. You might need to install explicitly these R packages
 
-- Pretty I/O: [pio](https://github.com/caravagn/pio)
-- Easy parallel [easypar](https://github.com/caravagn/easypar)
-
-until we develop an automatic installer for [VIBER](https://github.com/caravagn/VIBER). Once installed just load the package
 
 ```{r, message=FALSE, warning=FALSE}
 library(VIBER)

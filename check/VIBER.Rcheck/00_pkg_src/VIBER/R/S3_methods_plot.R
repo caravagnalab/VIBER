@@ -8,7 +8,9 @@
 #'
 #' @return A list of plots, that can be assembled in a unique figure
 #' with other packages like \code{ggpubr}.
-#' @export
+#'
+#' @exportS3Method plot vb_bmm
+#' @export plot.vb_bmm
 #'
 #' @examples
 #' data(fit_mvbmm_example)
@@ -27,7 +29,7 @@ plot.vb_bmm <- function(x, ...)
   )
 }
 
-my_ggplot_theme = function(cex = 1) 
+my_ggplot_theme = function(cex = 1)
 {
   theme_light(base_size = 10 * cex) +
     theme(

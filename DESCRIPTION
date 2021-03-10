@@ -16,7 +16,8 @@ Imports:
     crayon,
     pio,
     easypar,
-    tidyverse,
+    dplyr,
+    ggplot2,
     reshape2,
     cli
 Remotes: 
