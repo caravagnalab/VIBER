@@ -31,8 +31,8 @@ and each row is an input point. Values of this matrix represent the number of
 attempts of independent Bernoulli trials. This matrix and \code{x} should have
 the same dimension  (\code{N x K}, \code{N} points, \code{K} dimensions).}
 
-\item{data}{Extra data.frame  (\code{N x K}, \code{N} points, \code{W} attributes) 
-to store inside the output object \code{W} annotations for each one of the 
+\item{data}{Extra data.frame  (\code{N x K}, \code{N} points, \code{W} attributes)
+to store inside the output object \code{W} annotations for each one of the
 \code{N} input points. This parameter can also be \code{NULL}, in this case
 there is no extra annotation associated to the input. The annotations are necessary
 if one seeks to use VIBER to analyse cancer multi-sample sequencing data (the

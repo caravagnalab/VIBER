@@ -1,15 +1,14 @@
 initial_condition_Binomial_kmeans = function(x_NV, x_DP, K, a_0)
 {
-  
-  package = installed.packages() %>%
-    as_tibble() %>%
-    filter(Package == 'mobster')
-  
-  if(nrow(package) == 0) 
-    stop("Please install package mobster to run this initialization with kmeans: caravagn/mobster ")
-  
-  require(mobster)
-  
+
+  # package = installed.packages() %>%
+  #   as_tibble() %>%
+  #   filter(Package == 'mobster')
+  #
+  # if(nrow(package) == 0)
+  #   stop("Please install package mobster to run this initialization with kmeans.")
+  # require(mobster)
+
   # Data
   XVAF = (x_NV)/(x_DP) %>% as_tibble()
   colnames(XVAF) = colnames(x_NV)
@@ -26,9 +25,11 @@ initial_condition_Binomial_kmeans = function(x_NV, x_DP, K, a_0)
 
   # Beta variances from posterior assignments
   beta_var = XVAF %>%
-    reshape2::melt(id = 'cluster.kmeans') %>% as_tibble() %>%
+    reshape2::melt(id = 'cluster.kmeans') %>%
+    as_tibble() %>%
     arrange(cluster.kmeans) %>%
-    group_by(cluster.kmeans, variable) %>% summarise(value = var(value))  %>%
+    group_by(cluster.kmeans, variable) %>%
+    summarise(value = var(value))  %>%
     spread(variable, value) %>%
     ungroup() %>%
     select(-cluster.kmeans)

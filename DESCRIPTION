@@ -6,9 +6,9 @@ Author: Giulio Caravagna
 Maintainer: Giulio Caravagna <gcaravagn@gmail.com>
 Authors@R: person("Giulio", "Caravagna", role = c("aut", "cre"), email = "gcaravagn@gmail.com")
 Description: VIBER is a package to model multi-variate variational Binomial mixture models.
-    The statistical model is non-parametric and fit by a variational mean-field approximation to
-    the model posterior. The components are Binomial distributions, which can mukti-dimensional 
-    model count data.
+    The statistical model is semi-parametric and fit by a variational mean-field approximation to
+    the model posterior. The components are Binomial distributions, which can model muti-dimensional 
+    count data.
 License: GPL
 Encoding: UTF-8
 LazyData: true
@@ -17,7 +17,8 @@ Imports:
     pio,
     easypar,
     tidyverse,
-    reshape2
+    reshape2,
+    cli
 Remotes: 
     caravagn/pio,
     caravagn/easypar
@@ -26,5 +27,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://github.com/caravagn/VIBER
-BugReports: https://github.com/caravagn/VIBER/issues
+URL: https://github.com/caravagnalab/VIBER
+BugReports: https://github.com/caravagnalab/VIBER/issues

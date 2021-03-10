@@ -1,0 +1,13 @@
+choose_clusters	choose_clusters
+fit_mvbmm_example	fit_mvbmm_example
+get_clone_trees	get_clone_trees
+mvbmm_example	mvbmm_example
+plot.vb_bmm	plot.vb_bmm
+plot_2D	plot_2D
+plot_ELBO	plot_ELBO
+plot_latent_variables	plot_latent_variables
+plot_mixing_proportions	plot_mixing_proportions
+plot_peaks	plot_peaks
+print.vb_bmm	print.vb_bmm
+summary.vb_bmm	summary.vb_bmm
+variational_fit	variational_fit

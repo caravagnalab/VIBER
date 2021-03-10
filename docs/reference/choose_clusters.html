@@ -17,23 +17,27 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -51,7 +55,6 @@ in at least a certain number of dimensions. Output clusters will
 be renamed by size (C1 will be larger etc.), and the latent variables and
 hard clustering assignments will be updated accordingly." />
 <meta property="og:image" content="/logo.png" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -69,7 +72,7 @@ hard clustering assignments will be updated accordingly." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -91,7 +94,7 @@ hard clustering assignments will be updated accordingly." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -104,8 +107,8 @@ hard clustering assignments will be updated accordingly." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/caravagn/VIBER">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/caravagnalab/VIBER/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -123,7 +126,7 @@ hard clustering assignments will be updated accordingly." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Filter clusters heuristic</h1>
-    <small class="dont-index">Source: <a href='https://github.com/caravagn/VIBER/blob/master/R/choose_clusters.R'><code>R/choose_clusters.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/caravagnalab/VIBER/blob/master/R/choose_clusters.R'><code>R/choose_clusters.R</code></a></small>
     <div class="hidden name"><code>choose_clusters.Rd</code></div>
     </div>
 
@@ -137,8 +140,13 @@ be renamed by size (C1 will be larger etc.), and the latent variables and
 hard clustering assignments will be updated accordingly.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>choose_clusters</span>(<span class='no'>x</span>, <span class='kw'>binomial_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>dimensions_cutoff</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>pi_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.02</span>)</pre>
+    <pre class="usage"><span class='fu'>choose_clusters</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  binomial_cutoff <span class='op'>=</span> <span class='fl'>0.05</span>,
+  dimensions_cutoff <span class='op'>=</span> <span class='fl'>1</span>,
+  pi_cutoff <span class='op'>=</span> <span class='fl'>0.02</span>,
+  re_assign <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -159,6 +167,12 @@ hard clustering assignments will be updated accordingly.</p>
       <th>pi_cutoff</th>
       <td><p>Minimum size of the mixture component.</p></td>
     </tr>
+    <tr>
+      <th>re_assign</th>
+      <td><p>If <code>TRUE</code>, point assigned to a cluster that is filtered our, are re-assigned
+from the density function (without updating the parameters). Otherwise, clustering assignments for
+those points are returned as <code>NA</code>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -166,55 +180,14 @@ hard clustering assignments will be updated accordingly.</p>
     <p>An object of class 'vb_bmm'.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>fit_mvbmm_example</span>)
-<span class='fu'>choose_clusters</span>(<span class='no'>fit_mvbmm_example</span>)</div><div class='output co'>#&gt; 
-#&gt; <span style='color: #00BBBB;'>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</span><span>
-#&gt; </span><span style='color: #00BBBB;'> Selecting Binomial clusters (F1,2-heuristic).</span><span>
-#&gt; </span><span style='color: #00BBBB;'>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</span><span>
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; F1.       Cluster size</span><span> 0.02 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; F2. Num. of dimensions</span><span> 1 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; F2. Min. Binomial peak</span><span> 0.05 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; </span><span style='color: #555555;'># A tibble: 10 x 7</span><span>
-#&gt;    cluster            pi Above_cut F1    F2    accepted new.labels
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     
-#&gt; </span><span style='color: #555555;'> 1</span><span> C5      0.202                 2 TRUE  TRUE  TRUE     C1        
-#&gt; </span><span style='color: #555555;'> 2</span><span> C8      0.447                 2 TRUE  TRUE  TRUE     C2        
-#&gt; </span><span style='color: #555555;'> 3</span><span> C1      0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>         2 FALSE TRUE  FALSE    C3        
-#&gt; </span><span style='color: #555555;'> 4</span><span> C2      0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>         2 FALSE TRUE  FALSE    C4        
-#&gt; </span><span style='color: #555555;'> 5</span><span> C3      0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>         2 FALSE TRUE  FALSE    C5        
-#&gt; </span><span style='color: #555555;'> 6</span><span> C4      0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>         2 FALSE TRUE  FALSE    C6        
-#&gt; </span><span style='color: #555555;'> 7</span><span> C6      0.069</span><span style='text-decoration: underline;'>3</span><span>                1 TRUE  FALSE FALSE    C7        
-#&gt; </span><span style='color: #555555;'> 8</span><span> C7      0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>         2 FALSE TRUE  FALSE    C8        
-#&gt; </span><span style='color: #555555;'> 9</span><span> C9      0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>         2 FALSE TRUE  FALSE    C9        
-#&gt; </span><span style='color: #555555;'>10</span><span> C10     0.281                 1 TRUE  FALSE FALSE    C10       </div><div class='output co'>#&gt; </span><span style='color: #BBBBBB;background-color: #0000BB;'> [ mvbmm - Variational fit for Binomial mixtures ] 
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;     Points</span><span> N = 231 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Dimensions</span><span> W = 2 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;        Fit</span><span> CONVERGED (20 steps; eps. 1e-10) with Variational </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; 
-#&gt; Binomial parameters (2 digits rounded)</span><span> 
-#&gt;  </span><span style='color: #555555;'># A tibble: 2 x 2</span><span>
-#&gt;      C2    C1
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  0.5   0.25
-#&gt; </span><span style='color: #555555;'>2</span><span>  0.49  0.25
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Proportions (ordered)</span><span>  </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; </span><span style='color: #555555;'># A tibble: 2 x 2</span><span>
-#&gt;   entry value
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span> C2    0.688
-#&gt; </span><span style='color: #555555;'>2</span><span> C1    0.312</div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>fit_mvbmm_example</span><span class='op'>)</span>
+<span class='fu'>choose_clusters</span><span class='op'>(</span><span class='va'>fit_mvbmm_example</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in data.frame(cluster = names(x$pi_k), pi = x$pi_k, stringsAsFactors = F) %&gt;%     as_tibble(): could not find function "%&gt;%"</span></div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -225,7 +198,7 @@ hard clustering assignments will be updated accordingly.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

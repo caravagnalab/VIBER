@@ -17,23 +17,27 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -51,7 +55,6 @@ obtain, through parameters K. You can explicit the Dirichlet
 prior for the concentration of the mixture (alpha_0), as well as
 the hyperparmeters of the Beta priors for each mixture component." />
 <meta property="og:image" content="/logo.png" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -69,7 +72,7 @@ the hyperparmeters of the Beta priors for each mixture component." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -91,7 +94,7 @@ the hyperparmeters of the Beta priors for each mixture component." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -104,8 +107,8 @@ the hyperparmeters of the Beta priors for each mixture component." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/caravagn/VIBER">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/caravagnalab/VIBER/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -123,7 +126,7 @@ the hyperparmeters of the Beta priors for each mixture component." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Variational fit for Binomial mixtures</h1>
-    <small class="dont-index">Source: <a href='https://github.com/caravagn/VIBER/blob/master/R/Wrapper_variational.R'><code>R/Wrapper_variational.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/caravagnalab/VIBER/blob/master/R/Wrapper_variational.R'><code>R/Wrapper_variational.R</code></a></small>
     <div class="hidden name"><code>variational_fit.Rd</code></div>
     </div>
 
@@ -137,9 +140,21 @@ prior for the concentration of the mixture (<code>alpha_0</code>), as well as
 the hyperparmeters of the Beta priors for each mixture component.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>variational_fit</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>K</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>alpha_0</span> <span class='kw'>=</span> <span class='fl'>1e-06</span>, <span class='kw'>a_0</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>b_0</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>5000</span>, <span class='kw'>epsilon_conv</span> <span class='kw'>=</span> <span class='fl'>1e-10</span>, <span class='kw'>samples</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>q_init</span> <span class='kw'>=</span> <span class='st'>"prior"</span>, <span class='kw'>trace</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>variational_fit</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  K <span class='op'>=</span> <span class='fl'>10</span>,
+  alpha_0 <span class='op'>=</span> <span class='fl'>1e-06</span>,
+  a_0 <span class='op'>=</span> <span class='fl'>1</span>,
+  b_0 <span class='op'>=</span> <span class='fl'>1</span>,
+  max_iter <span class='op'>=</span> <span class='fl'>5000</span>,
+  epsilon_conv <span class='op'>=</span> <span class='fl'>1e-10</span>,
+  samples <span class='op'>=</span> <span class='fl'>10</span>,
+  q_init <span class='op'>=</span> <span class='st'>"prior"</span>,
+  trace <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  description <span class='op'>=</span> <span class='st'>"My VIBER model"</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -149,14 +164,26 @@ the hyperparmeters of the Beta priors for each mixture component.</p>
       <td><p>A matrix where each column is a dimension of the multivariate Binomial,
 and each row is an input point. Values of this matrix represent the number of
 successes of independent Bernoulli trials. This matrix and <code>y</code> should have
-the same dimension.</p></td>
+the same dimension  (<code>N x K</code>, <code>N</code> points, <code>K</code> dimensions).</p></td>
     </tr>
     <tr>
       <th>y</th>
       <td><p>A matrix where each column is a dimension of the multivariate Binomial,
 and each row is an input point. Values of this matrix represent the number of
 attempts of independent Bernoulli trials. This matrix and <code>x</code> should have
-the same dimension.</p></td>
+the same dimension  (<code>N x K</code>, <code>N</code> points, <code>K</code> dimensions).</p></td>
+    </tr>
+    <tr>
+      <th>data</th>
+      <td><p>Extra data.frame  (<code>N x K</code>, <code>N</code> points, <code>W</code> attributes)
+to store inside the output object <code>W</code> annotations for each one of the
+<code>N</code> input points. This parameter can also be <code>NULL</code>, in this case
+there is no extra annotation associated to the input. The annotations are necessary
+if one seeks to use VIBER to analyse cancer multi-sample sequencing data (the
+Binomial counts are  in that case <em>"cancer sequencing read counts"</em>); in that
+case in the annotations there must be two columns, <code>gene</code> and <code>driver</code>
+reporting a gene identifier for the input mutation, and its boolean driver status.
+The extra annotation data will be stored in the <code>data</code> field of the output.</p></td>
     </tr>
     <tr>
       <th>K</th>
@@ -215,89 +242,18 @@ feature can slow down quite substantially the fit.</p></td>
 the fit, plots the results, compute summary statistics etc.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>mvbmm_example</span>)
-<span class='no'>f</span> <span class='kw'>=</span> <span class='fu'>variational_fit</span>(<span class='no'>mvbmm_example</span>$<span class='no'>successes</span>, <span class='no'>mvbmm_example</span>$<span class='no'>trials</span>)</div><div class='output co'>#&gt; <span style='color: #BBBBBB;background-color: #0000BB;'> [ VIBER - variational fit ] 
-#&gt; </span><span style='font-weight: bold;'>
-#&gt; 	INPUT</span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;   Points</span><span> N = 231 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Clusters</span><span> K = 10 </span><span style='color: #000000;background-color: #BBBB00;'>(max)
-#&gt; 
-#&gt; Dirichlet</span><span> alpha = 1e-06 </span><span style='color: #000000;background-color: #BBBB00;'>(conc.)
-#&gt;      Beta</span><span> a0 = 1; b0 =1 </span><span style='color: #000000;background-color: #BBBB00;'>(shape)
-#&gt; 
-#&gt;      Beta (posterior)</span><span> prior </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;  Optimize</span><span> epsilon = 1e-10; steps =5000; r = 10 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; 
-#&gt; </span><span style='font-weight: bold;'>
-#&gt; 
-#&gt; BEST FIT
-#&gt; 
-#&gt; </span><span style='color: #BBBBBB;background-color: #0000BB;'> [ VIBER - Variational inference for Binomial mixtures ] 
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;     Points</span><span> N = 231 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Dimensions</span><span> W = 2 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;        Fit</span><span> CONVERGED (18 steps; eps. 1e-10) with Variational </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; 
-#&gt; Binomial parameters (2 digits rounded)</span><span> 
-#&gt;  </span><span style='color: #555555;'># A tibble: 2 x 10</span><span>
-#&gt;      C9    C3    C2    C5    C1    C4    C6    C7    C8   C10
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  0.5    0    0.25  0.22   0.5   0.5   0.5   0.5   0.5   0.5
-#&gt; </span><span style='color: #555555;'>2</span><span>  0.49   0.2  0.25  0      0.5   0.5   0.5   0.5   0.5   0.5
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Proportions (ordered)</span><span>  </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; </span><span style='color: #555555;'># A tibble: 10 x 2</span><span>
-#&gt;    entry         value
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> C9    0.447        
-#&gt; </span><span style='color: #555555;'> 2</span><span> C3    0.281        
-#&gt; </span><span style='color: #555555;'> 3</span><span> C2    0.202        
-#&gt; </span><span style='color: #555555;'> 4</span><span> C5    0.069</span><span style='text-decoration: underline;'>3</span><span>       
-#&gt; </span><span style='color: #555555;'> 5</span><span> C1    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 6</span><span> C4    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 7</span><span> C6    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span> C7    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 9</span><span> C8    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'>10</span><span> C10   0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='font-weight: bold;'>
-#&gt; 
-#&gt; COMPLETED: </span><span style='color: #00BBBB;'>0.13 mins, with status CONVERGED 
-#&gt; </span><span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>f</span>)</div><div class='output co'>#&gt; </span><span style='color: #BBBBBB;background-color: #0000BB;'> [ VIBER - Variational inference for Binomial mixtures ] 
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;     Points</span><span> N = 231 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Dimensions</span><span> W = 2 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;        Fit</span><span> CONVERGED (18 steps; eps. 1e-10) with Variational </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; 
-#&gt; Binomial parameters (2 digits rounded)</span><span> 
-#&gt;  </span><span style='color: #555555;'># A tibble: 2 x 10</span><span>
-#&gt;      C9    C3    C2    C5    C1    C4    C6    C7    C8   C10
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  0.5    0    0.25  0.22   0.5   0.5   0.5   0.5   0.5   0.5
-#&gt; </span><span style='color: #555555;'>2</span><span>  0.49   0.2  0.25  0      0.5   0.5   0.5   0.5   0.5   0.5
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Proportions (ordered)</span><span>  </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; </span><span style='color: #555555;'># A tibble: 10 x 2</span><span>
-#&gt;    entry         value
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> C9    0.447        
-#&gt; </span><span style='color: #555555;'> 2</span><span> C3    0.281        
-#&gt; </span><span style='color: #555555;'> 3</span><span> C2    0.202        
-#&gt; </span><span style='color: #555555;'> 4</span><span> C5    0.069</span><span style='text-decoration: underline;'>3</span><span>       
-#&gt; </span><span style='color: #555555;'> 5</span><span> C1    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 6</span><span> C4    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 7</span><span> C6    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span> C7    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 9</span><span> C8    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'>10</span><span> C10   0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>mvbmm_example</span><span class='op'>)</span>
+<span class='va'>f</span> <span class='op'>=</span> <span class='fu'>variational_fit</span><span class='op'>(</span><span class='va'>mvbmm_example</span><span class='op'>$</span><span class='va'>successes</span>, <span class='va'>mvbmm_example</span><span class='op'>$</span><span class='va'>trials</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #BBBBBB;background-color: #0000BB;'> [ VIBER - variational fit ] 
+#&gt; </span><span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Input n = 231, with k &lt; 10. Dirichlet concentration </span><span style='color: #00BB00;'>α = 1e-06</span><span>.</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Beta (a_0, b_0) = (1, 1); q_i = prior. Optimise: ε = 1e-10 or 5000 steps, r = 10 starts.</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BB00;'>✓</span><span> </span><span style='font-weight: bold;'>VIBER fit</span><span> completed in 0.17 mins (status: </span><span style='color: #00BB00;'>converged</span><span>)</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>── </span><span style='color: #000000;background-color: #BBBB00;'>[ VIBER ] My VIBER model</span><span> n = 231 (w = 2 dimensions). Fit with </span><span style='color: #00BB00;'>k = 10</span><span> clusters</span></div><div class='output co'>#&gt; <span class='message'>● Clusters: π = 45% [</span><span style='color: #BBBB00;'>C3</span><span>], 28% [</span><span style='color: #BBBB00;'>C8</span><span>], 20% [</span><span style='color: #BBBB00;'>C1</span><span>], and 7% [</span><span style='color: #BBBB00;'>C10</span><span>], with π &gt; 0.</span></div><div class='output co'>#&gt; <span class='message'>● Binomials: θ = &lt;0.5, 0.49&gt; [</span><span style='color: #BBBB00;'>C3</span><span>], &lt;0, 0.2&gt; [</span><span style='color: #BBBB00;'>C8</span><span>], &lt;0.25, 0.25&gt; [</span><span style='color: #BBBB00;'>C1</span><span>], and</span>
+#&gt; <span class='message'>  &lt;0.22, 0&gt; [</span><span style='color: #BBBB00;'>C10</span><span>].</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Score(s): ELBO = -47073.322. Fit </span><span style='color: #00BB00;'>converged</span><span> in 19 steps, ε = 1e-10.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>f</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>── </span><span style='color: #000000;background-color: #BBBB00;'>[ VIBER ] My VIBER model</span><span> n = 231 (w = 2 dimensions). Fit with </span><span style='color: #00BB00;'>k = 10</span><span> clusters</span></div><div class='output co'>#&gt; <span class='message'>● Clusters: π = 45% [</span><span style='color: #BBBB00;'>C3</span><span>], 28% [</span><span style='color: #BBBB00;'>C8</span><span>], 20% [</span><span style='color: #BBBB00;'>C1</span><span>], and 7% [</span><span style='color: #BBBB00;'>C10</span><span>], with π &gt; 0.</span></div><div class='output co'>#&gt; <span class='message'>● Binomials: θ = &lt;0.5, 0.49&gt; [</span><span style='color: #BBBB00;'>C3</span><span>], &lt;0, 0.2&gt; [</span><span style='color: #BBBB00;'>C8</span><span>], &lt;0.25, 0.25&gt; [</span><span style='color: #BBBB00;'>C1</span><span>], and</span>
+#&gt; <span class='message'>  &lt;0.22, 0&gt; [</span><span style='color: #BBBB00;'>C10</span><span>].</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Score(s): ELBO = -47073.322. Fit </span><span style='color: #00BB00;'>converged</span><span> in 19 steps, ε = 1e-10.</span></div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -308,7 +264,7 @@ the fit, plots the results, compute summary statistics etc.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -1,0 +1,15 @@
+choose_clusters         Filter clusters heuristic
+fit_mvbmm_example       Fit of the attached multivariate Binomial
+                        mixture
+get_clone_trees         Return clone trees from the fit.
+mvbmm_example           Example data
+plot.vb_bmm             Plot the clustering assignments.
+plot_2D                 2D clusters plot.
+plot_ELBO               Plot the ELBO
+plot_latent_variables   Plot the latent variables of the mixture.
+plot_mixing_proportions
+                        Plot the mixing proportions of the mixture.
+plot_peaks              Plot the Binomial peaks of the mixture.
+print.vb_bmm            Print to screen the object
+summary.vb_bmm          Print to screen the object
+variational_fit         Variational fit for Binomial mixtures

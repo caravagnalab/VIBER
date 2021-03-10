@@ -17,23 +17,27 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -45,7 +49,6 @@
 <meta property="og:title" content="Print to screen the object — summary.vb_bmm" />
 <meta property="og:description" content="Print to screen the object" />
 <meta property="og:image" content="/logo.png" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -63,7 +66,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -85,7 +88,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -98,8 +101,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/caravagn/VIBER">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/caravagnalab/VIBER/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -117,7 +120,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Print to screen the object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/caravagn/VIBER/blob/master/R/S3_methods_print.R'><code>R/S3_methods_print.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/caravagnalab/VIBER/blob/master/R/S3_methods_print.R'><code>R/S3_methods_print.R</code></a></small>
     <div class="hidden name"><code>summary.vb_bmm.Rd</code></div>
     </div>
 
@@ -126,7 +129,7 @@
     </div>
 
     <pre class="usage"><span class='co'># S3 method for vb_bmm</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>object</span>, <span class='no'>...</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,43 +149,15 @@
     <p>Nothing, just print to screen.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>fit_mvbmm_example</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>fit_mvbmm_example</span>)</div><div class='output co'>#&gt; <span style='color: #BBBBBB;background-color: #0000BB;'> [ mvbmm - Variational fit for Binomial mixtures ] 
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;     Points</span><span> N = 231 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Dimensions</span><span> W = 2 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt;        Fit</span><span> CONVERGED (20 steps; eps. 1e-10) with Variational </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; 
-#&gt; Binomial parameters (2 digits rounded)</span><span> 
-#&gt;  </span><span style='color: #555555;'># A tibble: 2 x 10</span><span>
-#&gt;      C8   C10    C5    C6    C1    C2    C3    C4    C7    C9
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  0.5    0    0.25  0.22   0.5   0.5   0.5   0.5   0.5   0.5
-#&gt; </span><span style='color: #555555;'>2</span><span>  0.49   0.2  0.25  0      0.5   0.5   0.5   0.5   0.5   0.5
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Proportions (ordered)</span><span>  </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; </span><span style='color: #555555;'># A tibble: 10 x 2</span><span>
-#&gt;    entry         value
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> C8    0.447        
-#&gt; </span><span style='color: #555555;'> 2</span><span> C10   0.281        
-#&gt; </span><span style='color: #555555;'> 3</span><span> C5    0.202        
-#&gt; </span><span style='color: #555555;'> 4</span><span> C6    0.069</span><span style='text-decoration: underline;'>3</span><span>       
-#&gt; </span><span style='color: #555555;'> 5</span><span> C1    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 6</span><span> C2    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 7</span><span> C3    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span> C4    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'> 9</span><span> C7    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span>
-#&gt; </span><span style='color: #555555;'>10</span><span> C9    0.000</span><span style='text-decoration: underline;'>000</span><span>004</span><span style='text-decoration: underline;'>33</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>fit_mvbmm_example</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>fit_mvbmm_example</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>── <span style='color: #000000;background-color: #BBBB00;'>[ VIBER ] mvbmm - Variational fit for Binomial mixtures</span><span> n = 231 (w = 2 dimens</span></div><div class='output co'>#&gt; <span class='message'>● Clusters: π = 45% [</span><span style='color: #BBBB00;'>C8</span><span>], 28% [</span><span style='color: #BBBB00;'>C10</span><span>], 20% [</span><span style='color: #BBBB00;'>C5</span><span>], and 7% [</span><span style='color: #BBBB00;'>C6</span><span>], with π &gt; 0.</span></div><div class='output co'>#&gt; <span class='message'>● Binomials: θ = &lt;0.5, 0.49&gt; [</span><span style='color: #BBBB00;'>C8</span><span>], &lt;0, 0.2&gt; [</span><span style='color: #BBBB00;'>C10</span><span>], &lt;0.25, 0.25&gt; [</span><span style='color: #BBBB00;'>C5</span><span>], and</span>
+#&gt; <span class='message'>  &lt;0.22, 0&gt; [</span><span style='color: #BBBB00;'>C6</span><span>].</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Score(s): ELBO = -47073.329. Fit </span><span style='color: #00BB00;'>converged</span><span> in 20 steps, ε = 1e-10.</span></div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -193,7 +168,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

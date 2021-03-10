@@ -18,8 +18,8 @@
 #' and each row is an input point. Values of this matrix represent the number of
 #' attempts of independent Bernoulli trials. This matrix and \code{x} should have
 #' the same dimension  (\code{N x K}, \code{N} points, \code{K} dimensions).
-#' @param data Extra data.frame  (\code{N x K}, \code{N} points, \code{W} attributes) 
-#' to store inside the output object \code{W} annotations for each one of the 
+#' @param data Extra data.frame  (\code{N x K}, \code{N} points, \code{W} attributes)
+#' to store inside the output object \code{W} annotations for each one of the
 #' \code{N} input points. This parameter can also be \code{NULL}, in this case
 #' there is no extra annotation associated to the input. The annotations are necessary
 #' if one seeks to use VIBER to analyse cancer multi-sample sequencing data (the
@@ -61,6 +61,8 @@
 #' @import crayon
 #' @import reshape2
 #' @import cli
+#' @import reshape2
+
 #'
 #' @examples
 #' data(mvbmm_example)
@@ -101,14 +103,14 @@ variational_fit = function(x,
 
   # # Console header
   # cat(bold("\n\tINPUT"))
-  # 
+  #
   # pioStr("\n  Points", paste0('N = ', nrow(x)))
   # pioStr("\nClusters", paste0('K = ', K), suffix = "(max)\n")
-  # 
+  #
   # pioStr("\nDirichlet", paste0('alpha = ', alpha_0), suffix = "(conc.)")
   # pioStr("\n     Beta", paste0('a0 = ', a_0, '; b0 =', b_0), suffix = "(shape)\n")
   # pioStr("\n     Beta (posterior)", q_init)
-  # 
+  #
   # pioStr(
   #   "\n Optimize", paste0('epsilon = ', epsilon_conv, '; steps =', max_iter, '; r = ', samples),
   #   suffix = '\n\n'
@@ -117,11 +119,11 @@ variational_fit = function(x,
   cli::cli_alert_info(
     "Input n = {.value {nrow(x)}}, with k < {.value {K}}. Dirichlet concentration {.field \u03B1 = {alpha_0}}."
     )
-  
+
   cli::cli_alert_info(
     "Beta (a_0, b_0) = ({.value {a_0}}, {.value {b_0}}); q_i = {.value {q_init}}. Optimise: \u03B5 = {.value {epsilon_conv}} or {.value {max_iter}} steps, r = {.value {samples}} starts."
   )
-  
+
   # Fits are obtained using the easypar package
   # which allows easy parallelization of R functions
   #
@@ -180,19 +182,19 @@ variational_fit = function(x,
 
   # Add extra data
   best$data = data
-  
+
   # Print some output
   TIME = difftime(as.POSIXct(Sys.time(), format = "%H:%M:%S"), TIME, units = "mins")
-  
+
   cat('\n')
-  
+
   cli::cli_alert_success(
     paste(bold("VIBER fit"), 'completed in',
           round(TIME, 2),
           'mins (status: {.value {ifelse(best$status == "CONVERGED", crayon::green("converged"), crayon::red(best$status))}})'))
-  
+
   cat('\n')
-  
+
   print(best)
 
   best$CPU_time = TIME
