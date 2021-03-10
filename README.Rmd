@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 status](https://travis-ci.org/caravagn/VIBER.svg?branch=master)](https://travis-ci.org/caravagn/VIBER)
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![](https://img.shields.io/badge/Part%20of-evoverse-blue.svg)](https://caravagn.github.io/evoverse)
+[![R-CMD-check](https://github.com/caravagn/VIBER/workflows/R-CMD-check/badge.svg)](https://github.com/caravagn/VIBER/actions)
 <!-- badges: end -->
 
 `VIBER` is a package to model *variational Binomial Mixtures*.

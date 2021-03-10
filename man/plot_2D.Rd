@@ -4,8 +4,19 @@
 \alias{plot_2D}
 \title{2D clusters plot.}
 \usage{
-plot_2D(x, d1, d2, cex = 1, alpha = 0.3, downsample = Inf,
-  colors = NA, bin_params = FALSE)
+plot_2D(
+  x,
+  d1,
+  d2,
+  cex = 1,
+  alpha = 0.3,
+  cut_zeroes = TRUE,
+  binning_n = NA,
+  binning_b = NA,
+  downsample = Inf,
+  colors = NA,
+  bin_params = FALSE
+)
 }
 \arguments{
 \item{x}{An object of class 'vb_bmm'.}
@@ -18,11 +29,22 @@ plot_2D(x, d1, d2, cex = 1, alpha = 0.3, downsample = Inf,
 
 \item{alpha}{Alpha of the points.}
 
+\item{binning_n}{This parameter goes with \code{binning_b}. If both \code{NA}, 
+no binnig is computed. If an integer value points are binned in a grid of size
+defined by \code{binning_b}, and up to \code{binning_n} points are sampled 
+per bin according to each cluster whose points map inside the bin.}
+
+\item{binning_b}{This parameter goes with \code{binning_n}. If both \code{NA}, 
+no binning is computed. If a real valuem points are binned in a grid of size
+\code{binning_b} by \code{binning_b}.}
+
 \item{downsample}{Maximun number of points to plot. Default is \code{Inf}, no downsampling.}
 
 \item{colors}{Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.}
 
 \item{bin_params}{If \code{TRUE} it adds also a point to show the fit Binomial success probabilities.}
+
+\item{cut_zeros}{If \code{TRUE}, remove points that are 0 in both dimensions.}
 }
 \value{
 A ggplot object.

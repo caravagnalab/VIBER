@@ -4,7 +4,9 @@
 \name{fit_mvbmm_example}
 \alias{fit_mvbmm_example}
 \title{Fit of the attached multivariate Binomial mixture}
-\format{Fit of a multivariate Binomial mixture}
+\format{
+Fit of a multivariate Binomial mixture
+}
 \usage{
 data(fit_mvbmm_example)
 }

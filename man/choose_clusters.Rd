@@ -4,8 +4,13 @@
 \alias{choose_clusters}
 \title{Filter clusters heuristic}
 \usage{
-choose_clusters(x, binomial_cutoff = 0.05, dimensions_cutoff = 1,
-  pi_cutoff = 0.02, re_assign = FALSE)
+choose_clusters(
+  x,
+  binomial_cutoff = 0.05,
+  dimensions_cutoff = 1,
+  pi_cutoff = 0.02,
+  re_assign = FALSE
+)
 }
 \arguments{
 \item{x}{An object of class 'vb_bmm'.}

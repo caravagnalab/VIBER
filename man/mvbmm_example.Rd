@@ -4,7 +4,9 @@
 \name{mvbmm_example}
 \alias{mvbmm_example}
 \title{Example data}
-\format{Data from a multivariate Binomial mixture}
+\format{
+Data from a multivariate Binomial mixture
+}
 \usage{
 data(mvbmm_example)
 }

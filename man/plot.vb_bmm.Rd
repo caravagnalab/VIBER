@@ -4,7 +4,7 @@
 \alias{plot.vb_bmm}
 \title{Plot the clustering assignments.}
 \usage{
-plot.vb_bmm(x, ...)
+\method{plot}{vb_bmm}(x, ...)
 }
 \arguments{
 \item{x}{An object of class vb_bmm.}
