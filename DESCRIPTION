@@ -22,7 +22,7 @@ Imports:
     cli
 Remotes: 
     caravagn/pio,
-    caravagn/easypar
+    caravagn/easypar,
     caravagnalab/ctree
 RoxygenNote: 7.1.1
 Suggests: 
