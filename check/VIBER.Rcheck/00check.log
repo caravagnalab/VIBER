@@ -35,8 +35,7 @@ See ‘/Users/gcaravagna/Documents/GitHub/VIBER/check/VIBER.Rcheck/00install.out
 * checking whether the package can be unloaded cleanly ... OK
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
-* checking dependencies in R code ... WARNING
-'::' or ':::' import not declared from: ‘ctree’
+* checking dependencies in R code ... NOTE
 There are ::: calls to the package's namespace in its code. A package
   almost never needs to use ::: for its own objects:
   ‘add_color_pl’ ‘add_fill_pl’ ‘get_2D_points’
@@ -139,8 +138,7 @@ The \usage entries must correspond to syntactically valid R code.
 See chapter ‘Writing R documentation files’ in the ‘Writing R
 Extensions’ manual.
 * checking Rd contents ... OK
-* checking for unstated dependencies in examples ... WARNING
-'::' or ':::' import not declared from: ‘ctree’
+* checking for unstated dependencies in examples ... OK
 * checking contents of ‘data’ directory ... OK
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
@@ -154,4 +152,4 @@ Extensions’ manual.
   ‘VIBER.Rmd’ using ‘UTF-8’... OK
 * checking re-building of vignette outputs ... OK
 * DONE
-Status: 5 WARNINGs, 3 NOTEs
+Status: 3 WARNINGs, 4 NOTEs

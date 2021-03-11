@@ -12,12 +12,12 @@ Description: VIBER is a package to model multi-variate variational Binomial mixt
 License: GPL
 Encoding: UTF-8
 LazyData: true
-Imports: crayon, pio, easypar, dplyr, ggplot2, reshape2, cli
-Remotes: caravagn/pio, caravagn/easypar
+Imports: crayon, pio, easypar, dplyr, ggplot2, reshape2, ctree, cli
+Remotes: caravagn/pio, caravagn/easypar, caravagn/ctree
 RoxygenNote: 7.1.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/caravagnalab/VIBER
 BugReports: https://github.com/caravagnalab/VIBER/issues
 NeedsCompilation: no
-Packaged: 2021-03-10 23:39:29 UTC; gcaravagna
+Packaged: 2021-03-11 09:46:16 UTC; gcaravagna
