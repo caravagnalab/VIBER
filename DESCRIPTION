@@ -23,6 +23,7 @@ Imports:
 Remotes: 
     caravagn/pio,
     caravagn/easypar
+    caravagnalab/ctree
 RoxygenNote: 7.1.1
 Suggests: 
     knitr,

@@ -20,11 +20,11 @@ This function uses the output fit of VIBER
 to create a call to \code{ctree} (\url{https://caravagn.github.io/ctree/}),
 a package to create clone trees for cancer evolution models.
 
-Creation of a clone tree requires annotations that are not usually 
-necessary for just a plain  VIBER analyses. These annotations report the status of \code{driver} 
+Creation of a clone tree requires annotations that are not usually
+necessary for just a plain  VIBER analyses. These annotations report the status of \code{driver}
 and \code{gene} for each one of the input datapoints; the annotations should
 have been passed when calling the \code{variational_fit} function, and stored
-inside the \code{data} field of the VIBER object. 
+inside the \code{data} field of the VIBER object.
 
 The clonal cluster is estimated from the cluster with the highest parameter
 values in most of the input dimensions (Binomial peaks).
@@ -43,7 +43,7 @@ data_annotations = data.frame(
  gene = paste0("G", 1:nrow(mvbmm_example$trials)),
  driver = FALSE
  )
- 
+
 data_annotations$driver[sample(1:nrow(data_annotations), 10)] = TRUE
 
 # Compared to the main variational_fit, we use the same call but add data
