@@ -131,7 +131,7 @@ variational_fit = function(x,
   #
   fits = easypar::run(
     FUN = function(i) {
-      vb_bmm_MV(
+      VIBER:::vb_bmm_MV(
         x_NV = x,
         x_DP = y,
         K = K,
@@ -150,7 +150,8 @@ variational_fit = function(x,
     export = ls(globalenv(), all.names = TRUE),
     cores.ratio = .8,
     parallel = TRUE,
-    cache = NULL
+    cache = NULL,
+    filter_errors = FALSE
   )
 
   # Polish errors if any

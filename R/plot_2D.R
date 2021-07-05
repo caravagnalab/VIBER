@@ -116,7 +116,7 @@ plot_2D = function(x,
     geom_hline(yintercept = 0,
                colour = "darkgray",
                size = .3) +
-    guides(fill = FALSE)
+    guides(fill = 'none')
 
   if(bin_params)
   {
@@ -135,7 +135,7 @@ plot_2D = function(x,
       )
   }
 
-  return(VIBER:::add_fill_pl(x, VIBER:::add_color_pl(x, p, colors), colors))
+  return(add_fill_pl(x, add_color_pl(x, p, colors), colors))
 }
 
 plot_2D_trials = function(x,

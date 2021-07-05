@@ -286,7 +286,7 @@ vb_bmm_MV <-
     if(save_trace) {
       fit_trace = bind_rows(fit_trace,
                             tibble(
-                              cluster.Binomial = labels,
+                              cluster.Binomial = unlist(labels),
                               step = i))
     }
 
