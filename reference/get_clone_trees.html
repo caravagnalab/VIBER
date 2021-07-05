@@ -186,75 +186,65 @@ affect the sampling of the trees.</p></td>
 
 <span class='co'># Compared to the main variational_fit, we use the same call but add data</span>
 <span class='va'>f</span> <span class='op'>=</span> <span class='fu'><a href='variational_fit.html'>variational_fit</a></span><span class='op'>(</span><span class='va'>mvbmm_example</span><span class='op'>$</span><span class='va'>successes</span>, <span class='va'>mvbmm_example</span><span class='op'>$</span><span class='va'>trials</span>, data <span class='op'>=</span> <span class='va'>data_annotations</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #BBBBBB;background-color: #0000BB;'> [ VIBER - variational fit ] 
-#&gt; </span><span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Input n = 231, with k &lt; 10. Dirichlet concentration </span><span style='color: #00BB00;'>α = 1e-06</span><span>.</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Beta (a_0, b_0) = (1, 1); q_i = prior. Optimise: ε = 1e-10 or 5000 steps, r = 10 starts.</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BB00;'>✔</span><span> </span><span style='font-weight: bold;'>VIBER fit</span><span> completed in 0.07 mins (status: </span><span style='color: #00BB00;'>converged</span><span>)</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>── </span><span style='color: #000000;background-color: #BBBB00;'>[ VIBER ] My VIBER model</span><span> n = 231 (w = 2 dimensions). Fit with </span><span style='color: #00BB00;'>k = 10</span><span> clusters</span></div><div class='output co'>#&gt; <span class='message'>● Clusters: π = 45% [</span><span style='color: #BBBB00;'>C5</span><span>], 28% [</span><span style='color: #BBBB00;'>C8</span><span>], 20% [</span><span style='color: #BBBB00;'>C7</span><span>], and 7% [</span><span style='color: #BBBB00;'>C10</span><span>], with π &gt; 0.</span></div><div class='output co'>#&gt; <span class='message'>● Binomials: θ = &lt;0.5, 0.49&gt; [</span><span style='color: #BBBB00;'>C5</span><span>], &lt;0, 0.2&gt; [</span><span style='color: #BBBB00;'>C8</span><span>], &lt;0.25, 0.25&gt; [</span><span style='color: #BBBB00;'>C7</span><span>], and</span>
-#&gt; <span class='message'>  &lt;0.22, 0&gt; [</span><span style='color: #BBBB00;'>C10</span><span>].</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Score(s): ELBO = -47073.329. Fit </span><span style='color: #00BB00;'>converged</span><span> in 19 steps, ε = 1e-10.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>f</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>── </span><span style='color: #000000;background-color: #BBBB00;'>[ VIBER ] My VIBER model</span><span> n = 231 (w = 2 dimensions). Fit with </span><span style='color: #00BB00;'>k = 10</span><span> clusters</span></div><div class='output co'>#&gt; <span class='message'>● Clusters: π = 45% [</span><span style='color: #BBBB00;'>C5</span><span>], 28% [</span><span style='color: #BBBB00;'>C8</span><span>], 20% [</span><span style='color: #BBBB00;'>C7</span><span>], and 7% [</span><span style='color: #BBBB00;'>C10</span><span>], with π &gt; 0.</span></div><div class='output co'>#&gt; <span class='message'>● Binomials: θ = &lt;0.5, 0.49&gt; [</span><span style='color: #BBBB00;'>C5</span><span>], &lt;0, 0.2&gt; [</span><span style='color: #BBBB00;'>C8</span><span>], &lt;0.25, 0.25&gt; [</span><span style='color: #BBBB00;'>C7</span><span>], and</span>
-#&gt; <span class='message'>  &lt;0.22, 0&gt; [</span><span style='color: #BBBB00;'>C10</span><span>].</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Score(s): ELBO = -47073.329. Fit </span><span style='color: #00BB00;'>converged</span><span> in 19 steps, ε = 1e-10.</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span style='color: #BBBBBB; background-color: #0000BB;'> [ VIBER - variational fit ] 
+#&gt; </span></div><div class='output co'>#&gt; <span class='message'><span style='color: #00BBBB;'>ℹ</span> Input n = 231, with k &lt; 10. Dirichlet concentration <span style='color: #00BB00;'>α = 1e-06</span>.</span></div><div class='output co'>#&gt; <span class='message'><span style='color: #00BBBB;'>ℹ</span> Beta (a_0, b_0) = (1, 1); q_i = prior. Optimise: ε = 1e-10 or 5000 steps, r = 10 starts.</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'><span style='color: #00BB00;'>✔</span> <span style='font-weight: bold;'>VIBER fit</span> completed in 0.07 mins (status: <span style='color: #00BB00;'>converged</span>)</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>── <span style='color: #000000; background-color: #BBBB00;'>[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style='color: #00BB00;'>k = 10</span> clusters</span></div><div class='output co'>#&gt; <span class='message'>• Clusters: π = 45% [<span style='color: #BBBB00;'>C6</span>], 28% [<span style='color: #BBBB00;'>C9</span>], 20% [<span style='color: #BBBB00;'>C4</span>], and 7% [<span style='color: #BBBB00;'>C1</span>], with π &gt; 0.</span></div><div class='output co'>#&gt; <span class='message'>• Binomials: θ = &lt;0.5, 0.49&gt; [<span style='color: #BBBB00;'>C6</span>], &lt;0, 0.2&gt; [<span style='color: #BBBB00;'>C9</span>], &lt;0.25, 0.25&gt; [<span style='color: #BBBB00;'>C4</span>], and &lt;0.22,</span>
+#&gt; <span class='message'>0&gt; [<span style='color: #BBBB00;'>C1</span>].</span></div><div class='output co'>#&gt; <span class='message'><span style='color: #00BBBB;'>ℹ</span> Score(s): ELBO = -47073.32. Fit <span style='color: #00BB00;'>converged</span> in 21 steps, ε = 1e-10.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>f</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>── <span style='color: #000000; background-color: #BBBB00;'>[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style='color: #00BB00;'>k = 10</span> clusters</span></div><div class='output co'>#&gt; <span class='message'>• Clusters: π = 45% [<span style='color: #BBBB00;'>C6</span>], 28% [<span style='color: #BBBB00;'>C9</span>], 20% [<span style='color: #BBBB00;'>C4</span>], and 7% [<span style='color: #BBBB00;'>C1</span>], with π &gt; 0.</span></div><div class='output co'>#&gt; <span class='message'>• Binomials: θ = &lt;0.5, 0.49&gt; [<span style='color: #BBBB00;'>C6</span>], &lt;0, 0.2&gt; [<span style='color: #BBBB00;'>C9</span>], &lt;0.25, 0.25&gt; [<span style='color: #BBBB00;'>C4</span>], and &lt;0.22,</span>
+#&gt; <span class='message'>0&gt; [<span style='color: #BBBB00;'>C1</span>].</span></div><div class='output co'>#&gt; <span class='message'><span style='color: #00BBBB;'>ℹ</span> Score(s): ELBO = -47073.32. Fit <span style='color: #00BB00;'>converged</span> in 21 steps, ε = 1e-10.</span></div><div class='input'>
 <span class='va'>trees</span> <span class='op'>=</span> <span class='fu'>get_clone_trees</span><span class='op'>(</span><span class='va'>f</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Estimated clonal cluster C5 from VIBER fit.</span></div><div class='output co'>#&gt; <span class='message'>Found 3 driver event(s) in VIBER fits.</span></div><div class='output co'>#&gt; </span><span style='color: #BBBBBB;background-color: #0000BB;'> [ ctree ~ clone trees generator for VIBER_dataset ] 
-#&gt; </span><span>
-#&gt; </span><span style='color: #949494;'># A tibble: 4 x 6</span><span>
+</div><div class='output co'>#&gt; <span class='message'>Estimated clonal cluster C6 from VIBER fit.</span></div><div class='output co'>#&gt; <span class='message'>Found 4 driver event(s) in VIBER fits.</span></div><div class='output co'>#&gt; <span style='color: #BBBBBB; background-color: #0000BB;'> [ ctree ~ clone trees generator for VIBER_dataset ] 
+#&gt; </span>
+#&gt; <span style='color: #949494;'># A tibble: 4 x 6</span>
 #&gt;   cluster       S1       S2 nMuts is.clonal is.driver
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>    
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> C5      0.498    0.493      103 TRUE      TRUE     
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> C7      0.251    0.254       47 FALSE     TRUE     
-#&gt; </span><span style='color: #BCBCBC;'>3</span><span> C8      0.000</span><span style='text-decoration: underline;'>155</span><span> 0.204       65 FALSE     TRUE     
-#&gt; </span><span style='color: #BCBCBC;'>4</span><span> C10     0.217    0.000</span><span style='text-decoration: underline;'>657</span><span>    16 FALSE     FALSE    
-#&gt; </div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BB00;'>✔</span><span> Trees per region </span><span style='color: #00BB00;'>2, 2</span><span></span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BBBB;'>ℹ</span><span> Total </span><span style='color: #00BB00;'>4</span><span> tree structures - search is </span><span style='font-weight: bold;'>exahustive</span><span></span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>── Ranking trees </span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #00BB00;'>✔</span><span> </span><span style='color: #00BB00;'>4</span><span>  trees with non-zero score, storing </span><span style='font-weight: bold;'>4</span><span></span></div><div class='input'>
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>    
+#&gt; <span style='color: #BCBCBC;'>1</span> C1      0.217    0.000<span style='text-decoration: underline;'>656</span>    16 FALSE     TRUE     
+#&gt; <span style='color: #BCBCBC;'>2</span> C4      0.251    0.254       47 FALSE     TRUE     
+#&gt; <span style='color: #BCBCBC;'>3</span> C6      0.498    0.493      103 TRUE      TRUE     
+#&gt; <span style='color: #BCBCBC;'>4</span> C9      0.000<span style='text-decoration: underline;'>155</span> 0.204       65 FALSE     TRUE     
+#&gt; </div><div class='output co'>#&gt; <span class='message'><span style='color: #00BB00;'>✔</span> Trees per region <span style='color: #00BB00;'>2, 2</span></span></div><div class='output co'>#&gt; <span class='message'><span style='color: #00BBBB;'>ℹ</span> Total <span style='color: #00BB00;'>4</span> tree structures - search is <span style='font-weight: bold;'>exahustive</span></span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>── Ranking trees </span></div><div class='output co'>#&gt; <span class='message'><span style='color: #00BB00;'>✔</span> <span style='color: #00BB00;'>4</span>  trees with non-zero score, storing <span style='font-weight: bold;'>4</span></span></div><div class='input'>
 <span class='fu'>ctree</span><span class='fu'>:::</span><span class='fu'><a href='https://rdrr.io/pkg/ctree/man/print.ctree.html'>print.ctree</a></span><span class='op'>(</span><span class='va'>trees</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; </span><span style='color: #BBBBBB;background-color: #0000BB;'> [ ctree - ctree rank 1/4 for VIBER_dataset ] 
-#&gt; </span><span>
-#&gt; </span><span style='color: #949494;'># A tibble: 4 x 6</span><span>
+</div><div class='output co'>#&gt; <span style='color: #BBBBBB; background-color: #0000BB;'> [ ctree - ctree rank 1/4 for VIBER_dataset ] 
+#&gt; </span>
+#&gt; <span style='color: #949494;'># A tibble: 4 x 6</span>
 #&gt;   cluster       S1       S2 nMuts is.clonal is.driver
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>    
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> C5      0.498    0.493      103 TRUE      TRUE     
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> C7      0.251    0.254       47 FALSE     TRUE     
-#&gt; </span><span style='color: #BCBCBC;'>3</span><span> C8      0.000</span><span style='text-decoration: underline;'>155</span><span> 0.204       65 FALSE     TRUE     
-#&gt; </span><span style='color: #BCBCBC;'>4</span><span> C10     0.217    0.000</span><span style='text-decoration: underline;'>657</span><span>    16 FALSE     FALSE    
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Tree shape (drivers annotated)</span><span>  </span><span style='color: #000000;background-color: #BBBB00;'>
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>    
+#&gt; <span style='color: #BCBCBC;'>1</span> C1      0.217    0.000<span style='text-decoration: underline;'>656</span>    16 FALSE     TRUE     
+#&gt; <span style='color: #BCBCBC;'>2</span> C4      0.251    0.254       47 FALSE     TRUE     
+#&gt; <span style='color: #BCBCBC;'>3</span> C6      0.498    0.493      103 TRUE      TRUE     
+#&gt; <span style='color: #BCBCBC;'>4</span> C9      0.000<span style='text-decoration: underline;'>155</span> 0.204       65 FALSE     TRUE     
+#&gt; <span style='color: #000000; background-color: #BBBB00;'>
+#&gt; Tree shape (drivers annotated)</span>  <span style='color: #000000; background-color: #BBBB00;'>
 #&gt; 
-#&gt; </span><span>  \-GL
-#&gt;    \-C5 :: G5, G13, G14, G17, G26, G60, G97
-#&gt;     |-C7 :: G115
-#&gt;     | \-C10
-#&gt;     \-C8 :: G101, G204
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Information transfer</span><span>  </span><span style='color: #000000;background-color: #BBBB00;'>
+#&gt; </span>  \-GL
+#&gt;    \-C6 :: G47, G63
+#&gt;     |-C4 :: G111, G173
+#&gt;     | \-C1 :: G151, G201
+#&gt;     \-C9 :: G102, G159, G196, G204
+#&gt; <span style='color: #000000; background-color: #BBBB00;'>
+#&gt; Information transfer</span>  <span style='color: #000000; background-color: #BBBB00;'>
 #&gt; 
-#&gt; </span><span>   GL ---&gt; G5 
-#&gt;    GL ---&gt; G13 
-#&gt;    GL ---&gt; G14 
-#&gt;    GL ---&gt; G17 
-#&gt;    GL ---&gt; G26 
-#&gt;    GL ---&gt; G60 
-#&gt;    GL ---&gt; G97 
-#&gt;    G5 ---&gt; G115 
-#&gt;    G13 ---&gt; G115 
-#&gt;    G14 ---&gt; G115 
-#&gt;    G17 ---&gt; G115 
-#&gt;    G26 ---&gt; G115 
-#&gt;    G60 ---&gt; G115 
-#&gt;    G97 ---&gt; G115 
-#&gt;    G5 ---&gt; G101 
-#&gt;    G5 ---&gt; G204 
-#&gt;    G13 ---&gt; G101 
-#&gt;    G13 ---&gt; G204 
-#&gt;    G14 ---&gt; G101 
-#&gt;    G14 ---&gt; G204 
-#&gt;    G17 ---&gt; G101 
-#&gt;    G17 ---&gt; G204 
-#&gt;    G26 ---&gt; G101 
-#&gt;    G26 ---&gt; G204 
-#&gt;    G60 ---&gt; G101 
-#&gt;    G60 ---&gt; G204 
-#&gt;    G97 ---&gt; G101 
-#&gt;    G97 ---&gt; G204 
-#&gt; </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; Tree score</span><span> 0.25 </span><span style='color: #000000;background-color: #BBBB00;'>
-#&gt; </span><span></div><div class='input'><span class='fu'>ctree</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ctree/man/plot.ctree.html'>plot.ctree</a></span><span class='op'>(</span><span class='va'>trees</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: Duplicated aesthetics after name standardisation: na.rm</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 1 rows containing missing values (geom_point).</span></div><div class='img'><img src='get_clone_trees-1.png' alt='' width='700' height='433' /></div></span></pre>
+#&gt; </span>   G111 ---&gt; G151 
+#&gt;    G111 ---&gt; G201 
+#&gt;    G173 ---&gt; G151 
+#&gt;    G173 ---&gt; G201 
+#&gt;    G47 ---&gt; G111 
+#&gt;    G47 ---&gt; G173 
+#&gt;    G63 ---&gt; G111 
+#&gt;    G63 ---&gt; G173 
+#&gt;    GL ---&gt; G47 
+#&gt;    GL ---&gt; G63 
+#&gt;    G47 ---&gt; G102 
+#&gt;    G47 ---&gt; G159 
+#&gt;    G47 ---&gt; G196 
+#&gt;    G47 ---&gt; G204 
+#&gt;    G63 ---&gt; G102 
+#&gt;    G63 ---&gt; G159 
+#&gt;    G63 ---&gt; G196 
+#&gt;    G63 ---&gt; G204 
+#&gt; <span style='color: #000000; background-color: #BBBB00;'>
+#&gt; Tree score</span> 0.25 <span style='color: #000000; background-color: #BBBB00;'>
+#&gt; </span></div><div class='input'><span class='fu'>ctree</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ctree/man/plot.ctree.html'>plot.ctree</a></span><span class='op'>(</span><span class='va'>trees</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Duplicated aesthetics after name standardisation: na.rm</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; = "none")` instead.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Removed 1 rows containing missing values (geom_point).</span></div><div class='img'><img src='get_clone_trees-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
