@@ -99,7 +99,7 @@
 <p>The format is (<code>S1</code> and <code>S2</code> are the <em>dimensions</em>)</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mvbmm_example</span><span class="op">$</span><span class="va">successes</span>
-<span class="co">#&gt; # A tibble: 231 x 2</span>
+<span class="co">#&gt; # A tibble: 231 × 2</span>
 <span class="co">#&gt;       S1    S2</span>
 <span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt;  1    44    39</span>
@@ -147,12 +147,12 @@
 <span class="co">#&gt;  [ VIBER - variational fit ]</span>
 <span class="co">#&gt; ℹ Input n = 231, with k &lt; 10. Dirichlet concentration α = 1e-06.</span>
 <span class="co">#&gt; ℹ Beta (a_0, b_0) = (1, 1); q_i = prior. Optimise: ε = 1e-10 or 5000 steps, r = 10 starts.</span>
-<span class="co">#&gt; ✔ VIBER fit completed in 0.08 mins (status: converged)</span>
+<span class="co">#&gt; ✔ VIBER fit completed in 0.1 mins (status: converged)</span>
 <span class="co">#&gt; ── [ VIBER ] My VIBER model n = 231 (w = 2 dimensions). Fit with k = 10 clusters</span>
-<span class="co">#&gt; • Clusters: π = 45% [C9], 28% [C1], 20% [C5], and 7% [C6], with π &gt; 0.</span>
-<span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [C9], &lt;0, 0.2&gt; [C1], &lt;0.25, 0.25&gt; [C5], and &lt;0.22,</span>
-<span class="co">#&gt; 0&gt; [C6].</span>
-<span class="co">#&gt; ℹ Score(s): ELBO = -47073.341. Fit converged in 23 steps, ε = 1e-10.</span></code></pre></div>
+<span class="co">#&gt; • Clusters: π = 45% [C3], 28% [C4], 20% [C5], and 7% [C7], with π &gt; 0.</span>
+<span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [C3], &lt;0, 0.2&gt; [C4], &lt;0.25, 0.25&gt; [C5], and &lt;0.22,</span>
+<span class="co">#&gt; 0&gt; [C7].</span>
+<span class="co">#&gt; ℹ Score(s): ELBO = -47073.314. Fit converged in 18 steps, ε = 1e-10.</span></code></pre></div>
 </div>
 <div id="filtering-output-clusters" class="section level2">
 <h2 class="hasAnchor">
@@ -175,19 +175,21 @@
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">fit</span> 
 <span class="co">#&gt; ── [ VIBER ] My VIBER model n = 231 (w = 2 dimensions). Fit with k = 4 clusters.</span>
-<span class="co">#&gt; • Clusters: π = 45% [C4], 28% [C1], 20% [C2], and 7% [C3], with π &gt; 0.</span>
-<span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [C4], &lt;0, 0.2&gt; [C1], &lt;0.25, 0.25&gt; [C2], and &lt;0.22,</span>
-<span class="co">#&gt; 0&gt; [C3].</span>
-<span class="co">#&gt; ℹ Score(s): ELBO = -47073.341. Fit converged in 23 steps, ε = 1e-10.</span></code></pre></div>
+<span class="co">#&gt; • Clusters: π = 45% [C1], 28% [C2], 20% [C3], and 7% [C4], with π &gt; 0.</span>
+<span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [C1], &lt;0, 0.2&gt; [C2], &lt;0.25, 0.25&gt; [C3], and &lt;0.22,</span>
+<span class="co">#&gt; 0&gt; [C4].</span>
+<span class="co">#&gt; ℹ Score(s): ELBO = -47073.314. Fit converged in 18 steps, ε = 1e-10.</span></code></pre></div>
 </div>
 <div id="plots" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plots" class="anchor"></a>Plots</h2>
-<p>You can plot the data - one dimension against the other - with the <code>plot_2D</code> (for instance, trye <code><a href="../reference/plot_2D.html">plot_2D(fit, d1 = 'S1', d2 = 'S2')</a></code>), or use the S3 function <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot(fit)</a></code> to compute a list of plots for each pair of dimensions in the mixture.</p>
+<p>You can plot the data - one dimension against the other - with the <code>plot_2D</code> (for instance, trye <code>plot_2D(fit, d1 = 'S1', d2 = 'S2')</code>), or use the S3 function <code>plot(fit)</code> to compute a list of plots for each pair of dimensions in the mixture.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span>
 <span class="co">#&gt; Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.</span>
 <span class="co">#&gt; Using compatibility `.name_repair`.</span>
+<span class="co">#&gt; This warning is displayed once every 8 hours.</span>
+<span class="co">#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span>
 <span class="co">#&gt; [[1]]</span></code></pre></div>
 <p><img src="VIBER_files/figure-html/unnamed-chunk-9-1.png" width="288"></p>
 <p>You can plot the ELBO</p>

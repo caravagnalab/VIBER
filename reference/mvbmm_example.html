@@ -138,40 +138,41 @@ with unknown ground truth.</p>
     <p>Data from a multivariate Binomial mixture</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>mvbmm_example</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mvbmm_example</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $successes
-#&gt; <span style='color: #949494;'># A tibble: 231 x 2</span>
-#&gt;       S1    S2
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span>    44    39
-#&gt; <span style='color: #BCBCBC;'> 2</span>    38    57
-#&gt; <span style='color: #BCBCBC;'> 3</span>    45    54
-#&gt; <span style='color: #BCBCBC;'> 4</span>    56    56
-#&gt; <span style='color: #BCBCBC;'> 5</span>    54    56
-#&gt; <span style='color: #BCBCBC;'> 6</span>    60    44
-#&gt; <span style='color: #BCBCBC;'> 7</span>    53    46
-#&gt; <span style='color: #BCBCBC;'> 8</span>    53    55
-#&gt; <span style='color: #BCBCBC;'> 9</span>    56    53
-#&gt; <span style='color: #BCBCBC;'>10</span>    53    60
-#&gt; <span style='color: #949494;'># … with 221 more rows</span>
-#&gt; 
-#&gt; $trials
-#&gt; <span style='color: #949494;'># A tibble: 231 x 2</span>
-#&gt;       S1    S2
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span>    86    76
-#&gt; <span style='color: #BCBCBC;'> 2</span>    79   106
-#&gt; <span style='color: #BCBCBC;'> 3</span>    90   108
-#&gt; <span style='color: #BCBCBC;'> 4</span>   111   105
-#&gt; <span style='color: #BCBCBC;'> 5</span>   100   102
-#&gt; <span style='color: #BCBCBC;'> 6</span>   107    90
-#&gt; <span style='color: #BCBCBC;'> 7</span>   111   103
-#&gt; <span style='color: #BCBCBC;'> 8</span>    94   104
-#&gt; <span style='color: #BCBCBC;'> 9</span>   115    98
-#&gt; <span style='color: #BCBCBC;'>10</span>   105   116
-#&gt; <span style='color: #949494;'># … with 221 more rows</span>
-#&gt; </div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>mvbmm_example</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mvbmm_example</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $successes</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 231 × 2</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       S1    S2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span>    44    39</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span>    38    57</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span>    45    54</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span>    56    56</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span>    54    56</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span>    60    44</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span>    53    46</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span>    53    55</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span>    56    53</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span>    53    60</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 221 more rows</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $trials</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 231 × 2</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       S1    S2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span>    86    76</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span>    79   106</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span>    90   108</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span>   111   105</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span>   100   102</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span>   107    90</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span>   111   103</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span>    94   104</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span>   115    98</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span>   105   116</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 221 more rows</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
