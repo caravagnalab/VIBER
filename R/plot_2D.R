@@ -28,7 +28,10 @@
 #' @import ggplot2
 #'
 #' @examples
+#' data(fit_mvbmm_example)
 #'
+#' # Sample names are "S1" and "S2" for this dataset
+#' plot_2D(fit_mvbmm_example, "S1", "S2")
 plot_2D = function(x,
                    d1,
                    d2,

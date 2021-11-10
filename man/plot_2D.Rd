@@ -54,5 +54,8 @@ Plot the fit for two dimensions, one against the other. Colour each point
 (defined as the ratio of sucesses over trail) according to the clustering assignments.
 }
 \examples{
+data(fit_mvbmm_example)
 
+# Sample names are "S1" and "S2" for this dataset
+plot_2D(fit_mvbmm_example, "S1", "S2")
 }
