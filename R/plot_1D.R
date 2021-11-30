@@ -39,7 +39,7 @@ plot_1D = function(
     guides(fill = guide_legend("Cluster"))
 
   if(!all(is.na(colors)))
-    myp = myp + scale_fill_manual(values = colors_clusters_samples)
+    myp = myp + scale_fill_manual(values = colors)
 
   return(myp)
 }
