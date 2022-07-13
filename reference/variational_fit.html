@@ -50,7 +50,7 @@ the hyperparmeters of the Beta priors for each mixture component."><meta propert
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Variational fit for Binomial mixtures</h1>
-    <small class="dont-index">Source: <a href="https://github.com/caravagnalab/VIBER/blob/HEAD/R/Wrapper_variational.R" class="external-link"><code>R/Wrapper_variational.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/caravagnalab/VIBER/blob/HEAD/R/variational_fit.R" class="external-link"><code>R/variational_fit.R</code></a></small>
     <div class="hidden name"><code>variational_fit.Rd</code></div>
     </div>
 
@@ -179,16 +179,16 @@ the fit, plots the results, compute summary statistics etc.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> <span style="font-weight: bold;">VIBER fit</span> completed in 0.09 mins (status: <span style="color: #00BB00;">converged</span>)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── <span style="color: #000000; background-color: #BBBB00;">[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style="color: #00BB00;">k = 10</span> clusters</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> • Clusters: π = 45% [<span style="color: #BBBB00;">C10</span>], 28% [<span style="color: #BBBB00;">C1</span>], 20% [<span style="color: #BBBB00;">C4</span>], and 7% [<span style="color: #BBBB00;">C9</span>], with π &gt; 0.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C10</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C1</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C4</span>], and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> &lt;0.22, 0&gt; [<span style="color: #BBBB00;">C9</span>].</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.312. Fit <span style="color: #00BB00;">converged</span> in 25 steps, ε = 1e-10.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> • Clusters: π = 45% [<span style="color: #BBBB00;">C4</span>], 28% [<span style="color: #BBBB00;">C10</span>], 20% [<span style="color: #BBBB00;">C2</span>], and 7% [<span style="color: #BBBB00;">C1</span>], with π &gt; 0.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C4</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C10</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C2</span>], and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &lt;0.22, 0&gt; [<span style="color: #BBBB00;">C1</span>].</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.339. Fit <span style="color: #00BB00;">converged</span> in 19 steps, ε = 1e-10.</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── <span style="color: #000000; background-color: #BBBB00;">[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style="color: #00BB00;">k = 10</span> clusters</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> • Clusters: π = 45% [<span style="color: #BBBB00;">C10</span>], 28% [<span style="color: #BBBB00;">C1</span>], 20% [<span style="color: #BBBB00;">C4</span>], and 7% [<span style="color: #BBBB00;">C9</span>], with π &gt; 0.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C10</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C1</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C4</span>], and</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> &lt;0.22, 0&gt; [<span style="color: #BBBB00;">C9</span>].</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.312. Fit <span style="color: #00BB00;">converged</span> in 25 steps, ε = 1e-10.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> • Clusters: π = 45% [<span style="color: #BBBB00;">C4</span>], 28% [<span style="color: #BBBB00;">C10</span>], 20% [<span style="color: #BBBB00;">C2</span>], and 7% [<span style="color: #BBBB00;">C1</span>], with π &gt; 0.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C4</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C10</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C2</span>], and</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &lt;0.22, 0&gt; [<span style="color: #BBBB00;">C1</span>].</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.339. Fit <span style="color: #00BB00;">converged</span> in 19 steps, ε = 1e-10.</span>
 </code></pre></div>
     </div>
   </div>
