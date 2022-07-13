@@ -144,12 +144,12 @@
 <span><span class="co"><span style="color: #BBBBBB; background-color: #0000BB;">#&gt; </span></span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Input n = 231, with k &lt; 10. Dirichlet concentration <span style="color: #00BB00;">α = 1e-06</span>.</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Beta (a_0, b_0) = (1, 1); q_i = prior. Optimise: ε = 1e-10 or 5000 steps, r = 10 starts.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="font-weight: bold;">VIBER fit</span> completed in 0.08 mins (status: <span style="color: #00BB00;">converged</span>)</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="font-weight: bold;">VIBER fit</span> completed in 0.09 mins (status: <span style="color: #00BB00;">converged</span>)</span></span>
 <span><span class="co">#&gt; ── <span style="color: #000000; background-color: #BBBB00;">[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style="color: #00BB00;">k = 10</span> clusters</span></span>
-<span><span class="co">#&gt; • Clusters: π = 45% [<span style="color: #BBBB00;">C4</span>], 28% [<span style="color: #BBBB00;">C10</span>], 20% [<span style="color: #BBBB00;">C6</span>], and 7% [<span style="color: #BBBB00;">C7</span>], with π &gt; 0.</span></span>
-<span><span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C4</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C10</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C6</span>], and</span></span>
-<span><span class="co">#&gt; &lt;0.22, 0&gt; [<span style="color: #BBBB00;">C7</span>].</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.335. Fit <span style="color: #00BB00;">converged</span> in 19 steps, ε = 1e-10.</span></span></code></pre></div>
+<span><span class="co">#&gt; • Clusters: π = 45% [<span style="color: #BBBB00;">C6</span>], 28% [<span style="color: #BBBB00;">C4</span>], 20% [<span style="color: #BBBB00;">C5</span>], and 7% [<span style="color: #BBBB00;">C8</span>], with π &gt; 0.</span></span>
+<span><span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C6</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C4</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C5</span>], and &lt;0.22,</span></span>
+<span><span class="co">#&gt; 0&gt; [<span style="color: #BBBB00;">C8</span>].</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.323. Fit <span style="color: #00BB00;">converged</span> in 21 steps, ε = 1e-10.</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="filtering-output-clusters">Filtering output clusters<a class="anchor" aria-label="anchor" href="#filtering-output-clusters"></a>
@@ -172,39 +172,103 @@
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fit</span> </span>
 <span><span class="co">#&gt; ── <span style="color: #000000; background-color: #BBBB00;">[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style="color: #00BB00;">k = 4</span> clusters.</span></span>
-<span><span class="co">#&gt; • Clusters: π = 45% [<span style="color: #BBBB00;">C1</span>], 28% [<span style="color: #BBBB00;">C4</span>], 20% [<span style="color: #BBBB00;">C2</span>], and 7% [<span style="color: #BBBB00;">C3</span>], with π &gt; 0.</span></span>
-<span><span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C1</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C4</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C2</span>], and &lt;0.22,</span></span>
-<span><span class="co">#&gt; 0&gt; [<span style="color: #BBBB00;">C3</span>].</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.335. Fit <span style="color: #00BB00;">converged</span> in 19 steps, ε = 1e-10.</span></span></code></pre></div>
+<span><span class="co">#&gt; • Clusters: π = 45% [<span style="color: #BBBB00;">C3</span>], 28% [<span style="color: #BBBB00;">C1</span>], 20% [<span style="color: #BBBB00;">C2</span>], and 7% [<span style="color: #BBBB00;">C4</span>], with π &gt; 0.</span></span>
+<span><span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C3</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C1</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C2</span>], and &lt;0.22,</span></span>
+<span><span class="co">#&gt; 0&gt; [<span style="color: #BBBB00;">C4</span>].</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.323. Fit <span style="color: #00BB00;">converged</span> in 21 steps, ε = 1e-10.</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="renaming-output-clusters">Renaming output clusters<a class="anchor" aria-label="anchor" href="#renaming-output-clusters"></a>
+</h2>
+<p>Fit clusters can be renamed upon defining a named vector whose values are the newly desired names, and whose names are the names to change. This can help if certain clusters can be given a certain interpretation which we want to communicate through plots.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># rename 6 clusters as new_C_1, new_C_2, ....</span></span>
+<span><span class="va">new_labels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"new_C_"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">new_labels</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"C"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">new_labels</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        C1        C2        C3        C4        C5        C6 </span></span>
+<span><span class="co">#&gt; "new_C_1" "new_C_2" "new_C_3" "new_C_4" "new_C_5" "new_C_6"</span></span>
+<span></span>
+<span><span class="co"># renaming</span></span>
+<span><span class="va">fit_renamed</span> <span class="op">=</span> <span class="fu"><a href="../reference/rename_clusters.html">rename_clusters</a></span><span class="op">(</span><span class="va">fit</span>, <span class="va">new_labels</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Renaming VIBER clusters </span><span style="color: #00BB00; font-weight: bold;">C1</span><span style="font-weight: bold;">, </span><span style="color: #00BB00; font-weight: bold;">C2</span><span style="font-weight: bold;">, </span><span style="color: #00BB00; font-weight: bold;">C3</span><span style="font-weight: bold;">, and </span><span style="color: #00BB00; font-weight: bold;">C4</span><span style="font-weight: bold;"> for the input object.</span> <span style="color: #00BBBB;">────────────</span></span></span>
+<span><span class="co">#&gt; ── <span style="color: #000000; background-color: #BBBB00;">[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style="color: #00BB00;">k = 4</span> clusters.</span></span>
+<span><span class="co">#&gt; • Clusters: π = 45% [<span style="color: #BBBB00;">C3</span>], 28% [<span style="color: #BBBB00;">C1</span>], 20% [<span style="color: #BBBB00;">C2</span>], and 7% [<span style="color: #BBBB00;">C4</span>], with π &gt; 0.</span></span>
+<span><span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">C3</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">C1</span>], &lt;0.25, 0.25&gt; [<span style="color: #BBBB00;">C2</span>], and &lt;0.22,</span></span>
+<span><span class="co">#&gt; 0&gt; [<span style="color: #BBBB00;">C4</span>].</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.323. Fit <span style="color: #00BB00;">converged</span> in 21 steps, ε = 1e-10.</span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Names <span style="color: #00BB00;">C5</span> and <span style="color: #00BB00;">C6</span> are not going to be used because does not appear in the input object.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── Renaming map</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   C1 -&gt; new_C_1</span></span>
+<span><span class="co">#&gt;   C2 -&gt; new_C_2</span></span>
+<span><span class="co">#&gt;   C3 -&gt; new_C_3</span></span>
+<span><span class="co">#&gt;   C4 -&gt; new_C_4</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ── Renamed VIBER object</span></span>
+<span><span class="co">#&gt; ── <span style="color: #000000; background-color: #BBBB00;">[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style="color: #00BB00;">k = 4</span> clusters.</span></span>
+<span><span class="co">#&gt; • Clusters: π = 45% [<span style="color: #BBBB00;">new_C_3</span>], 28% [<span style="color: #BBBB00;">new_C_1</span>], 20% [<span style="color: #BBBB00;">new_C_2</span>], and 7% [<span style="color: #BBBB00;">new_C_4</span>],</span></span>
+<span><span class="co">#&gt; with π &gt; 0.</span></span>
+<span><span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">new_C_3</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">new_C_1</span>], &lt;0.25, 0.25&gt;</span></span>
+<span><span class="co">#&gt; [<span style="color: #BBBB00;">new_C_2</span>], and &lt;0.22, 0&gt; [<span style="color: #BBBB00;">new_C_4</span>].</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.323. Fit <span style="color: #00BB00;">converged</span> in 21 steps, ε = 1e-10.</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">fit_renamed</span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── <span style="color: #000000; background-color: #BBBB00;">[ VIBER ] My VIBER model</span> n = 231 (w = 2 dimensions). Fit with <span style="color: #00BB00;">k = 4</span> clusters.</span></span>
+<span><span class="co">#&gt; • Clusters: π = 45% [<span style="color: #BBBB00;">new_C_3</span>], 28% [<span style="color: #BBBB00;">new_C_1</span>], 20% [<span style="color: #BBBB00;">new_C_2</span>], and 7% [<span style="color: #BBBB00;">new_C_4</span>],</span></span>
+<span><span class="co">#&gt; with π &gt; 0.</span></span>
+<span><span class="co">#&gt; • Binomials: θ = &lt;0.5, 0.49&gt; [<span style="color: #BBBB00;">new_C_3</span>], &lt;0, 0.2&gt; [<span style="color: #BBBB00;">new_C_1</span>], &lt;0.25, 0.25&gt;</span></span>
+<span><span class="co">#&gt; [<span style="color: #BBBB00;">new_C_2</span>], and &lt;0.22, 0&gt; [<span style="color: #BBBB00;">new_C_4</span>].</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Score(s): ELBO = -47073.323. Fit <span style="color: #00BB00;">converged</span> in 21 steps, ε = 1e-10.</span></span></code></pre></div>
+<p>In what follows, we use the original names.</p>
 </div>
 <div class="section level2">
 <h2 id="plots">Plots<a class="anchor" aria-label="anchor" href="#plots"></a>
 </h2>
+<div class="section level3">
+<h3 id="clustering-assignments-and-latent-variables-statistics">Clustering assignments and latent variables statistics<a class="anchor" aria-label="anchor" href="#clustering-assignments-and-latent-variables-statistics"></a>
+</h3>
 <p>You can plot the data - one dimension against the other - with the <code>plot_2D</code> (for instance, trye <code>plot_2D(fit, d1 = 'S1', d2 = 'S2')</code>), or use the S3 function <code>plot(fit)</code> to compute a list of plots for each pair of dimensions in the mixture.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.</span></span>
 <span><span class="co">#&gt; Using compatibility `.name_repair`.</span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
 <span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span></span></span>
 <span><span class="co">#&gt; [[1]]</span></span></code></pre></div>
-<p><img src="VIBER_files/figure-html/unnamed-chunk-9-1.png" width="288"></p>
-<p>You can plot the ELBO</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_ELBO.html">plot_ELBO</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
 <p><img src="VIBER_files/figure-html/unnamed-chunk-10-1.png" width="288"></p>
-<p>You can plot the Binomial peaks, per cluster and per dimension</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_peaks.html">plot_peaks</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
-<p><img src="VIBER_files/figure-html/unnamed-chunk-11-1.png" width="480"></p>
 <p>You can plot the mixing proportions of the mixture</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_mixing_proportions.html">plot_mixing_proportions</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
-<p><img src="VIBER_files/figure-html/unnamed-chunk-12-1.png" width="288"></p>
+<p><img src="VIBER_files/figure-html/unnamed-chunk-11-1.png" width="288"></p>
 <p>And, finally, you can plot the latent variables of the mixture</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_latent_variables.html">plot_latent_variables</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
-<p><img src="VIBER_files/figure-html/unnamed-chunk-13-1.png" width="384"></p>
+<p><img src="VIBER_files/figure-html/unnamed-chunk-12-1.png" width="384"></p>
+<p>Note the plot of a renamed object</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit_renamed</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [[1]]</span></span></code></pre></div>
+<p><img src="VIBER_files/figure-html/unnamed-chunk-13-1.png" width="288"></p>
+</div>
+<div class="section level3">
+<h3 id="evidence-lower-bound-elbo">Evidence Lower Bound (ELBO)<a class="anchor" aria-label="anchor" href="#evidence-lower-bound-elbo"></a>
+</h3>
+<p>You can plot the ELBO</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_ELBO.html">plot_ELBO</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
+<p><img src="VIBER_files/figure-html/unnamed-chunk-14-1.png" width="288"></p>
+</div>
+<div class="section level3">
+<h3 id="binomial-parameters">Binomial parameters<a class="anchor" aria-label="anchor" href="#binomial-parameters"></a>
+</h3>
+<p>You can plot the Binomial peaks, per cluster and per dimension</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_peaks.html">plot_peaks</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
+<p><img src="VIBER_files/figure-html/unnamed-chunk-15-1.png" width="480"></p>
+</div>
 </div>
   </div>
 
