@@ -38,3 +38,9 @@ reference:
   - plot.vb_bmm
   - print.vb_bmm
   - summary.vb_bmm
+
+- title: Datasets
+  desc:  Example datasets shipped with the package.
+  contents:
+  - mvbmm_example
+  - fit_mvbmm_example
