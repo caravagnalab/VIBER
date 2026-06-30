@@ -1,18 +1,20 @@
 Package: VIBER
 Type: Package
 Title: VIBER - Variational Inference for Binomial mixtures
-Version: 1.0.0
-Author: Giulio Caravagna
+Version: 1.0.1
+Date: 2026-07-01
 Maintainer: Giulio Caravagna <gcaravagn@gmail.com>
 Authors@R: person("Giulio", "Caravagna", role = c("aut", "cre"), email = "gcaravagn@gmail.com")
 Description: VIBER is a package to model multi-variate variational Binomial mixture models.
     The statistical model is semi-parametric and fit by a variational mean-field approximation to
-    the model posterior. The components are Binomial distributions, which can model muti-dimensional 
+    the model posterior. The components are Binomial distributions, which can model muti-dimensional
     count data.
 License: GPL
 Encoding: UTF-8
 LazyData: true
-Imports: 
+Depends:
+    R (>= 4.1)
+Imports:
     crayon,
     pio,
     easypar,
@@ -21,12 +23,12 @@ Imports:
     reshape2,
     ctree,
     cli
-Remotes: 
+Remotes:
     caravagn/pio,
     caravagn/easypar,
     caravagn/ctree
-RoxygenNote: 7.1.2
-Suggests: 
+RoxygenNote: 7.3.3
+Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr

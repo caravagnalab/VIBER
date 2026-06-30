@@ -16,3 +16,10 @@
 *.Rdata
 *.Rproj
 .DS_Store
+
+# R build artifacts
+*.tar.gz
+*.Rcheck/
+check/
+Rplots.pdf
+vignettes/*.html

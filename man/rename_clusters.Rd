@@ -27,6 +27,10 @@ data(mvbmm_example)
 x = variational_fit(mvbmm_example$successes, mvbmm_example$trials)
 print(x)
 
-x_renamed = rename_clusters(x, c(`C1`=`Clonal`, `C2` = `Subclonal`))
+# rename 6 clusters as new_C_1, new_C_2, ....
+new_labels = paste0("new_C_", 1:6)
+names(new_labels) = paste0("C", 1:6)
+
+x_renamed = rename_clusters(x, new_labels)
 print(x_renamed)
 }

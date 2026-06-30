@@ -1,9 +1,14 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README.md$
+^README\.Rmd$
 ^LICENSE.md$
 ^.gitignore$
 ^.travis.yml$
 ^.git/.*$
 ^\.travis\.yml$
 ^\.github$
+^docs$
+^pkgdown$
+^check$
+^_config\.yml$

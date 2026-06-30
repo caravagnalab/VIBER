@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 ```{r, message=FALSE, warning=FALSE}
 library(VIBER)
-library(tidyverse)
+library(dplyr)
 ```
 
 To run the fit you need 2 tibbles (or matrices), with equal dimensions and matched column names. One tibble contains the *counts of the successful Bernoulli trials*, the other contains the *count of all the attempted trials*. 

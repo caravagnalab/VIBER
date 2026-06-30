@@ -24,7 +24,7 @@ is used to forward parameters to both functions.
 data(fit_mvbmm_example)
 plot_fits(fit_mvbmm_example)
 
-\donotrun{
+\dontrun{
 
 require(dplyr)
 

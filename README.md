@@ -32,7 +32,7 @@ If you use `VIBER`, please cite:
 
 #### Help and support
 
-## [![](https://img.shields.io/badge/GitHub%20Pages-https://caravagnalab.github.io/VIBER/-yellow.svg)](https://caravagnalab.github.io/VIBER)
+[![](https://img.shields.io/badge/GitHub%20Pages-https://caravagnalab.github.io/VIBER/-yellow.svg)](https://caravagnalab.github.io/VIBER)
 
 ### Installation
 
