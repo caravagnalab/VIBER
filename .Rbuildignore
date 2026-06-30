@@ -12,3 +12,4 @@
 ^pkgdown$
 ^check$
 ^_config\.yml$
+^_pkgdown\.yml$

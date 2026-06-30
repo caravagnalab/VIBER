@@ -1,9 +1,9 @@
 ---
 title: "VIBER"
 author: "Giulio Caravagna"
-date: "14 February 2019"
-institute: "Institute for Cancer Research"
-email: "giulio.caravagna@ed.ac.uk"
+date: "2026-07-01"
+institute: "Cancer Data Science (CDS) Laboratory"
+email: "gcaravagn@gmail.com"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::knitr}

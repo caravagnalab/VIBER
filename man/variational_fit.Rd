@@ -71,6 +71,9 @@ dimension (\code{q_init = 'private'}). The default is equal to the prior.}
 \item{trace}{If true the trace computed during the fit is returned (this allows
 to check fits a posterirori, make animations etc.). Default is \code{FALSE}; this
 feature can slow down quite substantially the fit.}
+
+\item{description}{A description label for this fit, stored inside the output
+object. Default is \code{"My VIBER model"}.}
 }
 \value{
 An object of class \code{vb_bmm} which contains S3 methods to extract

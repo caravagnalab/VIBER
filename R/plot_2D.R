@@ -9,7 +9,7 @@
 #' @param d2 The name of the dimension to plot (y-axis).
 #' @param cex Cex of the points and the overall plot.
 #' @param alpha Alpha of the points.
-#' @param cut_zeros If \code{TRUE}, remove points that are 0 in both dimensions.
+#' @param cut_zeroes If \code{TRUE}, remove points that are 0 in both dimensions.
 #' @param binning_b This parameter goes with \code{binning_n}. If both \code{NA},
 #' no binning is computed. If a real valuem points are binned in a grid of size
 #' \code{binning_b} by \code{binning_b}.
@@ -44,7 +44,7 @@ plot_2D = function(x,
                    colors = NA,
                    bin_params = FALSE)
 {
-  data = VIBER:::get_2D_points(x, d1, d2)
+  data = get_2D_points(x, d1, d2)
   data[['cluster.Binomial']] = x$labels$cluster.Binomial
 
   # Cutting zeroes
@@ -107,7 +107,7 @@ plot_2D = function(x,
       y = d2
     ) +
     guides(color = guide_legend(title = 'Cluster', override.aes = list(alpha = 1))) +
-    VIBER:::my_ggplot_theme(cex) +
+    my_ggplot_theme(cex) +
     theme(
       legend.position = "bottom",
       legend.key.size = unit(.3 * cex, "cm"),

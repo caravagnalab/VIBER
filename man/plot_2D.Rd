@@ -29,6 +29,8 @@ plot_2D(
 
 \item{alpha}{Alpha of the points.}
 
+\item{cut_zeroes}{If \code{TRUE}, remove points that are 0 in both dimensions.}
+
 \item{binning_n}{This parameter goes with \code{binning_b}. If both \code{NA},
 no binnig is computed. If an integer value points are binned in a grid of size
 defined by \code{binning_b}, and up to \code{binning_n} points are sampled
@@ -43,8 +45,6 @@ no binning is computed. If a real valuem points are binned in a grid of size
 \item{colors}{Optional vector of colors, default (\code{NA}) are \code{ggplot} colors.}
 
 \item{bin_params}{If \code{TRUE} it adds also a point to show the fit Binomial success probabilities.}
-
-\item{cut_zeros}{If \code{TRUE}, remove points that are 0 in both dimensions.}
 }
 \value{
 A ggplot object.

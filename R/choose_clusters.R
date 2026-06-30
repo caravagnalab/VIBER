@@ -120,7 +120,7 @@ choose_clusters = function(x, binomial_cutoff = 0.05, dimensions_cutoff = 1, pi_
 
   # recompute clustering assignments..
   labels = data.frame(
-    cluster.Binomial = VIBER:::latent_vars_hard_assignments(lv = list(`z_nk` = x$r_nk, `pi` = x$pi_k)),
+    cluster.Binomial = latent_vars_hard_assignments(lv = list(`z_nk` = x$r_nk, `pi` = x$pi_k)),
     stringsAsFactors = F) %>% as_tibble()
 
   # Cluster counts determine the new pi

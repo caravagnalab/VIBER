@@ -47,7 +47,7 @@
 #'
 #' trees = get_clone_trees(f)
 #'
-#' ctree:::print.ctree(trees[[1]])
+#' ctree::print.ctree(trees[[1]])
 #' ctree::plot.ctree(trees[[1]])
 get_clone_trees = function(x, ...)
 {

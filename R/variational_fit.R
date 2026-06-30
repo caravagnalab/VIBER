@@ -49,6 +49,8 @@
 #' @param trace If true the trace computed during the fit is returned (this allows
 #' to check fits a posterirori, make animations etc.). Default is \code{FALSE}; this
 #' feature can slow down quite substantially the fit.
+#' @param description A description label for this fit, stored inside the output
+#' object. Default is \code{"My VIBER model"}.
 #'
 #' @return An object of class \code{vb_bmm} which contains S3 methods to extract
 #' the fit, plots the results, compute summary statistics etc.
@@ -131,7 +133,7 @@ variational_fit = function(x,
   #
   fits = easypar::run(
     FUN = function(i) {
-      VIBER:::vb_bmm_MV(
+      vb_bmm_MV(
         x_NV = x,
         x_DP = y,
         K = K,

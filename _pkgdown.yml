@@ -1,0 +1,40 @@
+template:
+  params:
+    part_of: evoverse
+
+url: https://caravagnalab.github.io/VIBER
+
+authors:
+  Giulio Caravagna:
+    href: https://www.caravagnalab.org/
+
+reference:
+- title: Fitting functions
+  desc:  These functions are used to fit a variational Binomial mixture model and refine its clustering assignments.
+  contents:
+  - variational_fit
+  - choose_clusters
+  - rename_clusters
+
+- title: Annotation functions
+  desc:  These functions extract derived objects, like clone trees, from a VIBER fit.
+  contents:
+  - get_clone_trees
+
+- title: Plotting functions
+  desc:  These functions can be used to plot data, fits and clusters from a VIBER object.
+  contents:
+  - plot_1D
+  - plot_2D
+  - plot_ELBO
+  - plot_fits
+  - plot_latent_variables
+  - plot_mixing_proportions
+  - plot_peaks
+
+- title: S3 functions
+  desc:  The S3 class `vb_bmm` returned by `variational_fit` implements the following S3 methods.
+  contents:
+  - plot.vb_bmm
+  - print.vb_bmm
+  - summary.vb_bmm

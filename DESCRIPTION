@@ -1,15 +1,22 @@
 Package: VIBER
 Type: Package
-Title: VIBER - Variational Inference for Binomial mixtures
+Title: VIBER: Variational Inference for Binomial Mixtures
 Version: 1.0.1
 Date: 2026-07-01
 Maintainer: Giulio Caravagna <gcaravagn@gmail.com>
-Authors@R: person("Giulio", "Caravagna", role = c("aut", "cre"), email = "gcaravagn@gmail.com")
-Description: VIBER is a package to model multi-variate variational Binomial mixture models.
-    The statistical model is semi-parametric and fit by a variational mean-field approximation to
-    the model posterior. The components are Binomial distributions, which can model muti-dimensional
-    count data.
-License: GPL
+Authors@R: c(
+    person("Giulio", "Caravagna", email = "gcaravagn@gmail.com", role = c("aut", "cre")),
+    person("Nicola", "Calonaci", email = "nicola.calonaci@gmail.com", role = "ctb"),
+    person("Elena", "Buscaroli", email = "ele.buscaroli@gmail.com", role = "ctb"))
+Description: Implements the variational Bayesian framework described in
+    Caravagna et al. (2020) <doi:10.1038/s41588-020-0675-5> to fit
+    multi-variate Binomial mixture models. The statistical model is
+    semi-parametric and fitted by a variational mean-field approximation to
+    the model posterior. Mixture components are Binomial distributions that
+    can model multi-dimensional count data, for instance sequencing read
+    counts in cancer genomics. The package provides functions to fit and
+    visualise clustering results.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends:
@@ -20,6 +27,7 @@ Imports:
     easypar,
     dplyr,
     ggplot2,
+    ggpubr,
     reshape2,
     ctree,
     cli
@@ -30,7 +38,8 @@ Remotes:
 RoxygenNote: 7.3.3
 Suggests:
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggsci
 VignetteBuilder: knitr
-URL: https://github.com/caravagnalab/VIBER
+URL: https://caravagnalab.github.io/VIBER, https://github.com/caravagnalab/VIBER
 BugReports: https://github.com/caravagnalab/VIBER/issues
